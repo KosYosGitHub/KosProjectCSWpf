@@ -62,6 +62,8 @@
   <ItemGroup>
     <Compile Include="Game\Generation\GenerationList.cs" />
     <Compile Include="Game\Pokedexes\PokedexList.cs" />
+    <Compile Include="Game\VersionGroup\VersionGroupList.cs" />
+    <Compile Include="Game\Version\VersionList.cs" />
     <Compile Include="PokeAPIClient.cs" />
     <Compile Include="Utility\CommonModels\NamedAPIResource.cs" />
     <Compile Include="Utility\CommonModels\NamedAPIResourceList.cs" />

@@ -5,7 +5,7 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:local="clr-namespace:PokeAPIView"
 	mc:Ignorable="d"
-	Title="PokeAPI Viewer" Height="768" Width="1024"
+	Title="PokeAPI Viewer" Height="1024" Width="1280"
 	WindowStartupLocation="CenterScreen"
 	Loaded="Window_Loaded">
 	<Grid>
@@ -26,7 +26,9 @@
 
 			<StackPanel Grid.Row="2">
 				<Button Content="Generation" Height="24" Command="{x:Static local:MenuViewModel.GenerationClick}"/>
-				<Button Content="Pokedexes" Height="24" Command="{x:Static local:MenuViewModel.PokedexClick}"/>
+				<Button Content="Pokedex" Height="24" Command="{x:Static local:MenuViewModel.PokedexClick}"/>
+				<Button Content="Version" Height="24" Command="{x:Static local:MenuViewModel.VersionClick}"/>
+				<Button Content="VersionGroup" Height="24" Command="{x:Static local:MenuViewModel.VersionGroupClick}"/>
 			</StackPanel>
 		</Grid>
 

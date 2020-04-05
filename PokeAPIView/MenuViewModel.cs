@@ -28,6 +28,20 @@ namespace PokeAPIView
 		public static readonly RoutedCommand PokedexClick = new RoutedCommand("PokedexClick", typeof(MenuViewModel));
 		#endregion
 
+		#region バージョンクリックコマンド
+		/// <summary>
+		/// バージョンクリックコマンド
+		/// </summary>
+		public static readonly RoutedCommand VersionClick = new RoutedCommand("VersionClick", typeof(MenuViewModel));
+		#endregion
+
+		#region バージョングループクリックコマンド
+		/// <summary>
+		/// バージョングループクリックコマンド
+		/// </summary>
+		public static readonly RoutedCommand VersionGroupClick = new RoutedCommand("VersionClick", typeof(MenuViewModel));
+		#endregion
+
 		#region 言語ボタンクリックコマンド
 		/// <summary>
 		/// 言語ボタンクリックコマンド
@@ -49,7 +63,7 @@ namespace PokeAPIView
 
 			window.Owner = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
 
-			window.ShowDialog();
+			_ = window.ShowDialog();
 		}
 		#endregion
 
@@ -65,7 +79,39 @@ namespace PokeAPIView
 
 			window.Owner = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
 
-			window.ShowDialog();
+			_ = window.ShowDialog();
+		}
+		#endregion
+
+		#region バージョン クリック
+		/// <summary>
+		/// バージョン クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void VersionClickCommand(object sender, ExecutedRoutedEventArgs e)
+		{
+			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("バージョン(Version)", new VersionList());
+
+			window.Owner = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
+
+			_ = window.ShowDialog();
+		}
+		#endregion
+
+		#region バージョングループ クリック
+		/// <summary>
+		/// バージョングループ クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void VersionGroupClickCommand(object sender, ExecutedRoutedEventArgs e)
+		{
+			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("バージョングループ(VersionGroup)", new VersionGroupList());
+
+			window.Owner = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
+
+			_ = window.ShowDialog();
 		}
 		#endregion
 
@@ -81,7 +127,7 @@ namespace PokeAPIView
 
 			window.Owner = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
 
-			window.ShowDialog();
+			_ = window.ShowDialog();
 		}
 		#endregion
 
@@ -96,6 +142,8 @@ namespace PokeAPIView
 		{
 			commands.Add(new CommandBinding(GenerationClick, GenerationClickCommand));
 			commands.Add(new CommandBinding(PokedexClick, PokedexClickCommand));
+			commands.Add(new CommandBinding(VersionClick, VersionClickCommand));
+			commands.Add(new CommandBinding(VersionGroupClick, VersionGroupClickCommand));
 			commands.Add(new CommandBinding(LanguageClick, LanguageClickCommand));
 		}
 		#endregion
