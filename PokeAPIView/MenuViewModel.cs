@@ -56,6 +56,27 @@ namespace PokeAPIView
 		public static readonly RoutedCommand ItemAttributeClick = new RoutedCommand("ItemAttributeClick", typeof(MenuViewModel));
 		#endregion
 
+		#region アイテムカテゴリクリックコマンド
+		/// <summary>
+		/// アイテムカテゴリクリックコマンド
+		/// </summary>
+		public static readonly RoutedCommand ItemCategoryClick = new RoutedCommand("ItemCategoryClick", typeof(MenuViewModel));
+		#endregion
+
+		#region アイテムフリング効果クリックコマンド
+		/// <summary>
+		/// アイテムフリング効果クリックコマンド
+		/// </summary>
+		public static readonly RoutedCommand ItemFlingEffectClick = new RoutedCommand("ItemFlingEffectClick", typeof(MenuViewModel));
+		#endregion
+
+		#region アイテムポケットクリックコマンド
+		/// <summary>
+		/// アイテムポケットクリックコマンド
+		/// </summary>
+		public static readonly RoutedCommand ItemPocketClick = new RoutedCommand("ItemPocketClick", typeof(MenuViewModel));
+		#endregion
+
 		#region 言語ボタンクリックコマンド
 		/// <summary>
 		/// 言語ボタンクリックコマンド
@@ -161,6 +182,54 @@ namespace PokeAPIView
 		}
 		#endregion
 
+		#region アイテムカテゴリクリック
+		/// <summary>
+		/// アイテムカテゴリクリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void ItemCategoryClickCommand(object sender, ExecutedRoutedEventArgs e)
+		{
+			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("アイテム属性(ItemAttribute)", new ItemCategoryList());
+
+			window.Owner = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
+
+			_ = window.ShowDialog();
+		}
+		#endregion
+
+		#region アイテムフリング効果クリック
+		/// <summary>
+		/// アイテムフリング効果クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void ItemFlingEffectClickCommand(object sender, ExecutedRoutedEventArgs e)
+		{
+			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("アイテムフリング効果(ItemFlingEffect)", new ItemFlingEffectList());
+
+			window.Owner = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
+
+			_ = window.ShowDialog();
+		}
+		#endregion
+
+		#region アイテムポケットクリック
+		/// <summary>
+		/// アイテムポケットクリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void ItemPocketClickCommand(object sender, ExecutedRoutedEventArgs e)
+		{
+			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("アイテムポケット(ItemPocket)", new ItemPocketList());
+
+			window.Owner = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
+
+			_ = window.ShowDialog();
+		}
+		#endregion
+
 		#region 言語ボタン クリック
 		/// <summary>
 		/// 言語ボタン クリック
@@ -195,6 +264,9 @@ namespace PokeAPIView
 			// Items
 			commands.Add(new CommandBinding(ItemClick, ItemClickCommand));
 			commands.Add(new CommandBinding(ItemAttributeClick, ItemAttributeClickCommand));
+			commands.Add(new CommandBinding(ItemCategoryClick, ItemCategoryClickCommand));
+			commands.Add(new CommandBinding(ItemFlingEffectClick, ItemFlingEffectClickCommand));
+			commands.Add(new CommandBinding(ItemPocketClick, ItemPocketClickCommand));
 
 			// Utility
 			commands.Add(new CommandBinding(LanguageClick, LanguageClickCommand));

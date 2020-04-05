@@ -65,6 +65,9 @@
     <Compile Include="Games\VersionGroup\VersionGroupList.cs" />
     <Compile Include="Games\Version\VersionList.cs" />
     <Compile Include="Items\ItemAttribute\ItemAttributeList.cs" />
+    <Compile Include="Items\ItemCategory\ItemCategoryList.cs" />
+    <Compile Include="Items\ItemFlingEffect\ItemFlingEffectList.cs" />
+    <Compile Include="Items\ItemPocket\ItemPocketList.cs" />
     <Compile Include="Items\Item\ItemList.cs" />
     <Compile Include="PokeAPIClient.cs" />
     <Compile Include="Utility\CommonModels\NamedAPIResource.cs" />

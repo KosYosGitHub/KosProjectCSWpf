@@ -46,6 +46,9 @@
 			<StackPanel Grid.Row="2">
 				<Button Content="Item" Height="24" Command="{x:Static local:MenuViewModel.ItemClick}"/>
 				<Button Content="ItemAttribute" Height="24" Command="{x:Static local:MenuViewModel.ItemAttributeClick}"/>
+				<Button Content="ItemCategory" Height="24" Command="{x:Static local:MenuViewModel.ItemCategoryClick}"/>
+				<Button Content="ItemFlingEffect" Height="24" Command="{x:Static local:MenuViewModel.ItemFlingEffectClick}"/>
+				<Button Content="ItemPocket" Height="24" Command="{x:Static local:MenuViewModel.ItemPocketClick}"/>
 			</StackPanel>
 		</Grid>
 
