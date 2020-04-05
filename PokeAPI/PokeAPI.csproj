@@ -70,12 +70,13 @@
     <Compile Include="Items\ItemPocket\ItemPocketList.cs" />
     <Compile Include="Items\Item\ItemList.cs" />
     <Compile Include="PokeAPIClient.cs" />
-    <Compile Include="Utility\CommonModels\NamedAPIResource.cs" />
-    <Compile Include="Utility\CommonModels\NamedAPIResourceList.cs" />
-    <Compile Include="Utility\CommonModels\NamedAPIResourceParser.cs" />
-    <Compile Include="Utility\CommonModels\NamedAPIResourceModel.cs" />
+    <Compile Include="Utility\CommonModels\NamedAPIResource\NamedAPIResource.cs" />
+    <Compile Include="Utility\CommonModels\NamedAPIResource\NamedAPIResourceList.cs" />
+    <Compile Include="Utility\CommonModels\NamedAPIResource\NamedAPIResourceParser.cs" />
+    <Compile Include="Utility\CommonModels\NamedAPIResource\NamedAPIResourceModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\Language\LanguageList.cs" />
+    <Compile Include="Utility\Language\Language.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KosGeneric\KosGeneric.csproj">
