@@ -60,10 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Game\Generation\GenerationList.cs" />
-    <Compile Include="Game\Pokedexes\PokedexList.cs" />
-    <Compile Include="Game\VersionGroup\VersionGroupList.cs" />
-    <Compile Include="Game\Version\VersionList.cs" />
+    <Compile Include="Games\Generation\GenerationList.cs" />
+    <Compile Include="Games\Pokedexes\PokedexList.cs" />
+    <Compile Include="Games\VersionGroup\VersionGroupList.cs" />
+    <Compile Include="Games\Version\VersionList.cs" />
+    <Compile Include="Items\ItemAttribute\ItemAttributeList.cs" />
+    <Compile Include="Items\Item\ItemList.cs" />
     <Compile Include="PokeAPIClient.cs" />
     <Compile Include="Utility\CommonModels\NamedAPIResource.cs" />
     <Compile Include="Utility\CommonModels\NamedAPIResourceList.cs" />

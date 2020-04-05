@@ -8,8 +8,10 @@
 	Title="PokeAPI Viewer" Height="1024" Width="1280"
 	WindowStartupLocation="CenterScreen"
 	Loaded="Window_Loaded">
-	<Grid>
+	<Grid Margin="10">
 		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="10"/>
 			<ColumnDefinition Width="1*"/>
 			<ColumnDefinition Width="10"/>
 			<ColumnDefinition Width="1*"/>
@@ -22,7 +24,7 @@
 				<RowDefinition/>
 			</Grid.RowDefinitions>
 
-			<Label Grid.Row="0" Content="Game" HorizontalAlignment="Center"/>
+			<Label Grid.Row="0" Content="Games" HorizontalAlignment="Center"/>
 
 			<StackPanel Grid.Row="2">
 				<Button Content="Generation" Height="24" Command="{x:Static local:MenuViewModel.GenerationClick}"/>
@@ -33,6 +35,21 @@
 		</Grid>
 
 		<Grid Grid.Column="2">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="24"/>
+				<RowDefinition Height="10"/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+
+			<Label Grid.Row="0" Content="Items" HorizontalAlignment="Center"/>
+
+			<StackPanel Grid.Row="2">
+				<Button Content="Item" Height="24" Command="{x:Static local:MenuViewModel.ItemClick}"/>
+				<Button Content="ItemAttribute" Height="24" Command="{x:Static local:MenuViewModel.ItemAttributeClick}"/>
+			</StackPanel>
+		</Grid>
+
+		<Grid Grid.Column="4">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="24"/>
 				<RowDefinition Height="10"/>

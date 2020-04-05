@@ -42,6 +42,20 @@ namespace PokeAPIView
 		public static readonly RoutedCommand VersionGroupClick = new RoutedCommand("VersionClick", typeof(MenuViewModel));
 		#endregion
 
+		#region アイテムクリックコマンド
+		/// <summary>
+		/// アイテムクリックコマンド
+		/// </summary>
+		public static readonly RoutedCommand ItemClick = new RoutedCommand("ItemClick", typeof(MenuViewModel));
+		#endregion
+
+		#region アイテム属性クリックコマンド
+		/// <summary>
+		/// アイテム属性クリックコマンド
+		/// </summary>
+		public static readonly RoutedCommand ItemAttributeClick = new RoutedCommand("ItemAttributeClick", typeof(MenuViewModel));
+		#endregion
+
 		#region 言語ボタンクリックコマンド
 		/// <summary>
 		/// 言語ボタンクリックコマンド
@@ -115,6 +129,38 @@ namespace PokeAPIView
 		}
 		#endregion
 
+		#region アイテムクリック
+		/// <summary>
+		/// アイテムクリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void ItemClickCommand(object sender, ExecutedRoutedEventArgs e)
+		{
+			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("アイテム(Item)", new ItemList());
+
+			window.Owner = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
+
+			_ = window.ShowDialog();
+		}
+		#endregion
+
+		#region アイテム属性クリック
+		/// <summary>
+		/// アイテム属性クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void ItemAttributeClickCommand(object sender, ExecutedRoutedEventArgs e)
+		{
+			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("アイテム属性(ItemAttribute)", new ItemAttributeList());
+
+			window.Owner = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
+
+			_ = window.ShowDialog();
+		}
+		#endregion
+
 		#region 言語ボタン クリック
 		/// <summary>
 		/// 言語ボタン クリック
@@ -140,10 +186,17 @@ namespace PokeAPIView
 		/// <param name="commands">Command Binding Collection</param>
 		public void InitializeCommandBindings(CommandBindingCollection commands)
 		{
+			// Games
 			commands.Add(new CommandBinding(GenerationClick, GenerationClickCommand));
 			commands.Add(new CommandBinding(PokedexClick, PokedexClickCommand));
 			commands.Add(new CommandBinding(VersionClick, VersionClickCommand));
 			commands.Add(new CommandBinding(VersionGroupClick, VersionGroupClickCommand));
+
+			// Items
+			commands.Add(new CommandBinding(ItemClick, ItemClickCommand));
+			commands.Add(new CommandBinding(ItemAttributeClick, ItemAttributeClickCommand));
+
+			// Utility
 			commands.Add(new CommandBinding(LanguageClick, LanguageClickCommand));
 		}
 		#endregion
