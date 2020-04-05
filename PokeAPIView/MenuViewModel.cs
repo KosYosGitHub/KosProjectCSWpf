@@ -94,7 +94,7 @@ namespace PokeAPIView
 		/// <param name="e"></param>
 		private void GenerationClickCommand(object sender, ExecutedRoutedEventArgs e)
 		{
-			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("世代(Generation)", new GenerationList());
+			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("世代(Generation)", new GenerationList(), typeof(Window));
 
 			window.Owner = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
 
@@ -110,7 +110,7 @@ namespace PokeAPIView
 		/// <param name="e"></param>
 		private void PokedexClickCommand(object sender, ExecutedRoutedEventArgs e)
 		{
-			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("ポケモン図鑑(Pokedex)", new PokedexList());
+			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("ポケモン図鑑(Pokedex)", new PokedexList(), typeof(Window));
 
 			window.Owner = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
 
@@ -126,7 +126,7 @@ namespace PokeAPIView
 		/// <param name="e"></param>
 		private void VersionClickCommand(object sender, ExecutedRoutedEventArgs e)
 		{
-			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("バージョン(Version)", new VersionList());
+			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("バージョン(Version)", new VersionList(), typeof(Window));
 
 			window.Owner = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
 
@@ -142,7 +142,7 @@ namespace PokeAPIView
 		/// <param name="e"></param>
 		private void VersionGroupClickCommand(object sender, ExecutedRoutedEventArgs e)
 		{
-			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("バージョングループ(VersionGroup)", new VersionGroupList());
+			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("バージョングループ(VersionGroup)", new VersionGroupList(), typeof(Window));
 
 			window.Owner = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
 
@@ -158,7 +158,7 @@ namespace PokeAPIView
 		/// <param name="e"></param>
 		private void ItemClickCommand(object sender, ExecutedRoutedEventArgs e)
 		{
-			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("アイテム(Item)", new ItemList());
+			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("アイテム(Item)", new ItemList(), typeof(Window));
 
 			window.Owner = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
 
@@ -174,7 +174,7 @@ namespace PokeAPIView
 		/// <param name="e"></param>
 		private void ItemAttributeClickCommand(object sender, ExecutedRoutedEventArgs e)
 		{
-			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("アイテム属性(ItemAttribute)", new ItemAttributeList());
+			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("アイテム属性(ItemAttribute)", new ItemAttributeList(), typeof(Window));
 
 			window.Owner = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
 
@@ -190,7 +190,7 @@ namespace PokeAPIView
 		/// <param name="e"></param>
 		private void ItemCategoryClickCommand(object sender, ExecutedRoutedEventArgs e)
 		{
-			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("アイテム属性(ItemAttribute)", new ItemCategoryList());
+			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("アイテム属性(ItemAttribute)", new ItemCategoryList(), typeof(Window));
 
 			window.Owner = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
 
@@ -206,7 +206,7 @@ namespace PokeAPIView
 		/// <param name="e"></param>
 		private void ItemFlingEffectClickCommand(object sender, ExecutedRoutedEventArgs e)
 		{
-			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("アイテムフリング効果(ItemFlingEffect)", new ItemFlingEffectList());
+			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("アイテムフリング効果(ItemFlingEffect)", new ItemFlingEffectList(), typeof(Window));
 
 			window.Owner = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
 
@@ -222,7 +222,7 @@ namespace PokeAPIView
 		/// <param name="e"></param>
 		private void ItemPocketClickCommand(object sender, ExecutedRoutedEventArgs e)
 		{
-			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("アイテムポケット(ItemPocket)", new ItemPocketList());
+			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("アイテムポケット(ItemPocket)", new ItemPocketList(), typeof(Window));
 
 			window.Owner = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
 
@@ -238,7 +238,7 @@ namespace PokeAPIView
 		/// <param name="e"></param>
 		private void LanguageClickCommand(object sender, ExecutedRoutedEventArgs e)
 		{
-			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("言語(Language)", new LanguageList());
+			NamedAPIResourceListWindow window = new NamedAPIResourceListWindow("言語(Language)", new LanguageList(), typeof(LanguageWindow));
 
 			window.Owner = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
 

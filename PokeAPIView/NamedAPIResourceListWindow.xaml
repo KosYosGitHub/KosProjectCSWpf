@@ -4,6 +4,7 @@
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:local="clr-namespace:PokeAPIView"
+	xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
 	mc:Ignorable="d"
 	Title="{Binding NameCaption}" Height="768" Width="1024"
 	WindowStartupLocation="CenterOwner"
@@ -34,6 +35,12 @@
 					<DataGridTextColumn Header="名称" Binding="{Binding Name}" Width="400" IsReadOnly="True">
 					</DataGridTextColumn>
 				</DataGrid.Columns>
+
+				<b:Interaction.Triggers>
+					<b:EventTrigger EventName="SelectionChanged">
+						<b:InvokeCommandAction Command="{x:Static local:NamedAPIResourceListViewModel.SelectedChangedCommand}"/>
+					</b:EventTrigger>
+				</b:Interaction.Triggers>
 			</DataGrid>
 
 			<Grid Grid.Column="2">
@@ -60,7 +67,7 @@
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
 
-					<Button Grid.Column="0" Content="詳細"/>
+					<Button Grid.Column="0" Content="詳細" Command="{x:Static local:NamedAPIResourceListViewModel.DetailClickCommand}"/>
 				</Grid>
 
 			</Grid>

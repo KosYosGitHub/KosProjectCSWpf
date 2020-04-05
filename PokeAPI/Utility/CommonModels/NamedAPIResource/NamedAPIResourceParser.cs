@@ -17,7 +17,7 @@ namespace PokeAPI
 		/// 名前付きAPIリソースリストの取得
 		/// </summary>
 		/// <param name="json">名前リソースリストのJSON文字列</param>
-		/// <param name="list">取得先名前付きリソースリスト</param>
+		/// <param name="list">取得先名前付きAPIリソースリスト</param>
 		/// <param name="firstCall">初回呼出時のみtrue</param>
 		internal void ParseNamedAPIResourceList(string json, NamedAPIResourceList list, bool firstCall = true)
 		{
@@ -50,6 +50,23 @@ namespace PokeAPI
 				string nextJson = Singleton<PokeAPIClient>.Instance.GetJson(next);
 				ParseNamedAPIResourceList(nextJson, list, false);
 			}
+		}
+		#endregion
+
+		#region 名前付きAPIリソースの取得
+		/// <summary>
+		/// 名前付きAPIリソースの取得
+		/// </summary>
+		/// <param name="token">JSONトークン</param>
+		/// <param name="namedAPIResource">取得先名前付きAPIリソース</param>
+		internal void ParseNamedAPIResource(JToken token, NamedAPIResourceModel namedAPIResource)
+		{
+			if(!token.HasValues) {
+				return;
+			}
+
+			namedAPIResource.Name = (token["name"] as JValue).ToString();
+			namedAPIResource.URL = (token["url"] as JValue).ToString();
 		}
 		#endregion
 	}

@@ -108,24 +108,11 @@ namespace PokeAPI
 			}
 
 			// JSON文字列の取得
-			string json = GetNamedAPIResourceJson();
+			string json = Singleton<PokeAPIClient>.Instance.GetAPIResourceListEndPoint(endPoint);
 
 			// 取得した
 			NamedAPIResourceParser parser = new NamedAPIResourceParser();
 			parser.ParseNamedAPIResourceList(json, this);
-		}
-		#endregion
-
-		// private メソッド
-
-		#region 名前付きAPIリソースのJSON文字列取得
-		/// <summary>
-		/// 名前付きAPIリソースのJSON文字列取得
-		/// </summary>
-		/// <returns>JSON文字列</returns>
-		private string GetNamedAPIResourceJson()
-		{
-			return Singleton<PokeAPIClient>.Instance.GetAPIResourceListEndPoint(endPoint);
 		}
 		#endregion
 	}

@@ -10,23 +10,30 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PokeAPI;
 
 namespace PokeAPIView
 {
 	/// <summary>
-	/// MainWindow.xaml の相互作用ロジック
+	/// LanguageWindow.xaml の相互作用ロジック
 	/// </summary>
-	public partial class MenuWindow : Window
+	public partial class LanguageWindow : Window
 	{
 		// メンバ変数
 
-		#region メニュー画面のビューモデル
+		#region 情報URL
 		/// <summary>
-		/// メニュー画面のビューモデル
+		/// 情報URL
 		/// </summary>
-		private MenuViewModel menu = new MenuViewModel();
+		private string url = string.Empty;
+		#endregion
+
+		#region ビューモデル
+		/// <summary>
+		/// 言語ビューモデル
+		/// </summary>
+		private Language lang = new Language();
 		#endregion
 
 		// イベントハンドラ
@@ -35,9 +42,11 @@ namespace PokeAPIView
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public MenuWindow()
+		public LanguageWindow(string url)
 		{
 			InitializeComponent();
+
+			this.url = url;
 		}
 		#endregion
 
@@ -49,10 +58,21 @@ namespace PokeAPIView
 		/// <param name="e"></param>
 		private void Window_Loaded(object sender, RoutedEventArgs e)
 		{
-			// コマンドの初期化
-			menu.InitializeCommandBindings(CommandBindings);
+			lang.GetLanguage(url);
 
-			this.DataContext = menu;
+			DataContext = lang;
+		}
+		#endregion
+
+		#region 閉じる
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void closeButton_Click(object sender, RoutedEventArgs e)
+		{
+			Close();
 		}
 		#endregion
 	}

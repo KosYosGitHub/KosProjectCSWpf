@@ -75,8 +75,12 @@
     <Compile Include="Utility\CommonModels\NamedAPIResource\NamedAPIResourceParser.cs" />
     <Compile Include="Utility\CommonModels\NamedAPIResource\NamedAPIResourceModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\CommonModels\Name\Name.cs" />
+    <Compile Include="Utility\CommonModels\Name\NameModel.cs" />
+    <Compile Include="Utility\CommonModels\Name\NameParser.cs" />
     <Compile Include="Utility\Language\LanguageList.cs" />
     <Compile Include="Utility\Language\Language.cs" />
+    <Compile Include="Utility\Language\LanguageModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KosGeneric\KosGeneric.csproj">
@@ -88,11 +92,8 @@
       <Name>KosMVVM</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="..\packages.config">
-      <Link>packages.config</Link>
-    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

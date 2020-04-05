@@ -37,10 +37,10 @@ namespace PokeAPIView
 		/// </summary>
 		/// <param name="nameCaption">名称キャプション</param>
 		/// <param name="namedAPIResourceList">名前付きAPIリソースリスト</param>
-		public NamedAPIResourceListWindow(string nameCaption, NamedAPIResourceList namedAPIResourceList)
+		public NamedAPIResourceListWindow(string nameCaption, NamedAPIResourceList namedAPIResourceList, Type detailWindowType)
 		{
+			viewModel = new NamedAPIResourceListViewModel(nameCaption, namedAPIResourceList, detailWindowType);
 			InitializeComponent();
-			viewModel = new NamedAPIResourceListViewModel(nameCaption, namedAPIResourceList);
 		}
 		#endregion
 
@@ -52,6 +52,9 @@ namespace PokeAPIView
 		/// <param name="e"></param>
 		private void Window_Loaded(object sender, RoutedEventArgs e)
 		{
+			// コマンド紐づけ
+			viewModel.InitializeCommandBindings(CommandBindings);
+
 			// ViewModel関連付け
 			DataContext = viewModel;
 
