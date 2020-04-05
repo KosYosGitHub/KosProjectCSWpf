@@ -5,10 +5,44 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:local="clr-namespace:PokeAPIView"
 	mc:Ignorable="d"
-	Title="PokeAPI Viewer" Height="450" Width="800"
+	Title="PokeAPI Viewer" Height="768" Width="1024"
 	WindowStartupLocation="CenterScreen"
 	Loaded="Window_Loaded">
 	<Grid>
-		<Button Content="言語" Command="{x:Static local:MenuViewModel.LanguageClick}"/>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="10"/>
+			<ColumnDefinition Width="1*"/>
+		</Grid.ColumnDefinitions>
+
+		<Grid Grid.Column="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="24"/>
+				<RowDefinition Height="10"/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+
+			<Label Grid.Row="0" Content="Game" HorizontalAlignment="Center"/>
+
+			<StackPanel Grid.Row="2">
+				<Button Content="Generation" Height="24" Command="{x:Static local:MenuViewModel.GenerationClick}"/>
+				<Button Content="Pokedexes" Height="24" Command="{x:Static local:MenuViewModel.PokedexClick}"/>
+			</StackPanel>
+		</Grid>
+
+		<Grid Grid.Column="2">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="24"/>
+				<RowDefinition Height="10"/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			
+			<Label Grid.Row="0" Content="Utility" HorizontalAlignment="Center"/>
+
+			<StackPanel Grid.Row="2">
+				<Button Content="Language" Height="24" Command="{x:Static local:MenuViewModel.LanguageClick}"/>
+			</StackPanel>
+		</Grid>
+		
 	</Grid>
 </Window>
