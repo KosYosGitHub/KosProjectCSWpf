@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KosGeneric", "KosGeneric\Ko
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeAPIView", "PokeAPIView\PokeAPIView.csproj", "{0D547B94-05A6-403E-BF39-B4EB1CC94535}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KosEnvironment", "KosEnvironment\KosEnvironment.csproj", "{4DAF8057-55A7-483D-AE3F-F79DEE1CBD89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{F6E912E2-8218-4375-A67B-530500454E79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{0D547B94-05A6-403E-BF39-B4EB1CC94535}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D547B94-05A6-403E-BF39-B4EB1CC94535}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D547B94-05A6-403E-BF39-B4EB1CC94535}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DAF8057-55A7-483D-AE3F-F79DEE1CBD89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DAF8057-55A7-483D-AE3F-F79DEE1CBD89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DAF8057-55A7-483D-AE3F-F79DEE1CBD89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DAF8057-55A7-483D-AE3F-F79DEE1CBD89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6E912E2-8218-4375-A67B-530500454E79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6E912E2-8218-4375-A67B-530500454E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6E912E2-8218-4375-A67B-530500454E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6E912E2-8218-4375-A67B-530500454E79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

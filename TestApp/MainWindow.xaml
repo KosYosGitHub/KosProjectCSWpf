@@ -1,0 +1,100 @@
+﻿<Window x:Class="TestApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestApp"
+		xmlns:ke="clr-namespace:KosEnvironment;assembly=KosEnvironment"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+		WindowStartupLocation="CenterScreen">
+	<Window.DataContext>
+		<ke:EnvironmentInfo/>
+	</Window.DataContext>
+	<Grid>
+		<ScrollViewer VerticalScrollBarVisibility="Visible">
+			<StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Operating System Name"/>
+					<Label Content="{Binding OperatingSystemName}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Operating System Caption"/>
+					<Label Content="{Binding OperatingSystemCaption}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Operating System Description"/>
+					<Label Content="{Binding OperatingSystemDescription}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Operating System Version"/>
+					<Label Content="{Binding OperatingSystemVersion}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Operating System Build Number"/>
+					<Label Content="{Binding OperatingSystemBuildNumber}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Operating System Build Type"/>
+					<Label Content="{Binding OperatingSystemBuildType}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Operating System Manufacturer"/>
+					<Label Content="{Binding OperatingSystemManufacturer}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Operating System Locale ID"/>
+					<Label Content="{Binding OperatingSystemLocaleID}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Operating System Language"/>
+					<Label Content="{Binding OperatingSystemLanguage}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Operating System Code Set"/>
+					<Label Content="{Binding OperatingSystemCodeSet}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Operating System Country Code"/>
+					<Label Content="{Binding OperatingSystemCountryCode}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Operating System Serial Number"/>
+					<Label Content="{Binding OperatingSystemSerialNumber}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Operating System Install Date"/>
+					<Label Content="{Binding OperatingSystemInstallDate}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Last Boot Up Time"/>
+					<Label Content="{Binding LastBootUpTime}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Windows Directory"/>
+					<Label Content="{Binding WindowsDirectory}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="System Device"/>
+					<Label Content="{Binding SystemDevice}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="System Drive"/>
+					<Label Content="{Binding SystemDrive}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Boot Device"/>
+					<Label Content="{Binding BootDevice}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Windows Plus! Product ID"/>
+					<Label Content="{Binding PlusProductID}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Windows Plus! Version Number"/>
+					<Label Content="{Binding PlusVersionNumber}"/>
+				</StackPanel>
+			</StackPanel>
+		</ScrollViewer>
+	</Grid>
+</Window>
