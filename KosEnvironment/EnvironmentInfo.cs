@@ -15,6 +15,7 @@ namespace KosEnvironment
 		public string OperatingSystemVersion { get; }
 		public string OperatingSystemBuildNumber { get; }
 		public string OperatingSystemBuildType { get; }
+		public string CSDVersion { get; }
 		public string OperatingSystemManufacturer { get; }
 		public string OperatingSystemLocaleID { get; }
 		public string OperatingSystemLanguage { get; }
@@ -29,6 +30,9 @@ namespace KosEnvironment
 		public string BootDevice { get; }
 		public string PlusProductID { get; }
 		public string PlusVersionNumber { get; }
+		public string CreationClassName { get; }
+		public string CSCreationClassName { get; }
+		public string CSName { get; }
 
 		public EnvironmentInfo()
 		{
@@ -42,6 +46,7 @@ namespace KosEnvironment
 						OperatingSystemVersion = mo["Version"].ToString();
 						OperatingSystemBuildNumber = mo["BuildNumber"].ToString();
 						OperatingSystemBuildType = mo["BuildType"].ToString();
+						CSDVersion = mo["CSDVersion"]?.ToString();
 						OperatingSystemManufacturer = mo["Manufacturer"].ToString();
 						OperatingSystemLocaleID = mo["Locale"].ToString();
 						OperatingSystemLanguage = mo["OSLanguage"].ToString();
@@ -56,6 +61,9 @@ namespace KosEnvironment
 						BootDevice = mo["BootDevice"].ToString();
 						PlusProductID = mo["PlusProductID"]?.ToString();
 						PlusVersionNumber = mo["PlusVersionNumber"]?.ToString();
+						CreationClassName = mo["CreationClassName"].ToString();
+						CSCreationClassName = mo["CSCreationClassName"].ToString();
+						CSName = mo["CSName"].ToString();
 
 						mo.Dispose();
 						break;

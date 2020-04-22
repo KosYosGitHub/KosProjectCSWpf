@@ -39,6 +39,10 @@
 					<Label Content="{Binding OperatingSystemBuildType}"/>
 				</StackPanel>
 				<StackPanel Orientation="Horizontal">
+					<Label Content="CSDVersion"/>
+					<Label Content="{Binding CSDVersion}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
 					<Label Content="Operating System Manufacturer"/>
 					<Label Content="{Binding OperatingSystemManufacturer}"/>
 				</StackPanel>
@@ -93,6 +97,18 @@
 				<StackPanel Orientation="Horizontal">
 					<Label Content="Windows Plus! Version Number"/>
 					<Label Content="{Binding PlusVersionNumber}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Creation Class Name"/>
+					<Label Content="{Binding CreationClassName}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="CSCreation Class Name"/>
+					<Label Content="{Binding CSCreationClassName}"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="CSName"/>
+					<Label Content="{Binding CSName}"/>
 				</StackPanel>
 			</StackPanel>
 		</ScrollViewer>
