@@ -4,12 +4,17 @@
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:local="clr-namespace:PokeAPIView"
+	xmlns:poke="clr-namespace:PokeAPI;assembly=PokeAPI"
 	mc:Ignorable="d"
 	Title="Language" Height="450" Width="800"
 	WindowStartupLocation="CenterOwner"
 	Loaded="Window_Loaded">
-	
-	<Grid Margin="10">
+
+	<Window.DataContext>
+		<poke:Language x:Name="viewModel"/>
+	</Window.DataContext>
+
+    <Grid Margin="10">
 		
 		<Grid.RowDefinitions>
 			<RowDefinition/>
@@ -94,12 +99,13 @@
 			<Grid Grid.Column="2">
 				<Grid.RowDefinitions>
 					<RowDefinition/>
-					<RowDefinition Height="10"/>
+					<RowDefinition Height="2"/>
 					<RowDefinition Height="32"/>
 				</Grid.RowDefinitions>
 
 				<DataGrid
 					Grid.Row="0"
+					x:Name="namesGrid"
 					ItemsSource="{Binding Names}"
 					HeadersVisibility="Column"
 					ColumnHeaderHeight="24"
@@ -111,7 +117,15 @@
 					</DataGrid.Columns>
 				</DataGrid>
 
-				<Button Grid.Row="2" Content="詳細"/>
+				<Grid Grid.Row="2">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+						<ColumnDefinition Width="40"/>
+					</Grid.ColumnDefinitions>
+
+					<Button Grid.Column="1" x:Name="namesDetailButton" Content="詳細" Click="NamesDetailButton_Click"/>
+				</Grid>
+				
 			</Grid>
 		</Grid>
 
@@ -121,7 +135,7 @@
 				<ColumnDefinition Width="80"/>
 			</Grid.ColumnDefinitions>
 
-			<Button x:Name="closeButton" Grid.Column="1" Content="閉じる" Click="closeButton_Click"/>
+			<Button x:Name="closeButton" Grid.Column="1" Content="閉じる" Click="CloseButton_Click"/>
 		</Grid>
 		
 	</Grid>

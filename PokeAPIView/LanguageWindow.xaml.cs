@@ -20,20 +20,13 @@ namespace PokeAPIView
 	/// </summary>
 	public partial class LanguageWindow : Window
 	{
-		// メンバ変数
+		// プロパティ
 
 		#region 情報URL
 		/// <summary>
 		/// 情報URL
 		/// </summary>
-		private string url = string.Empty;
-		#endregion
-
-		#region ビューモデル
-		/// <summary>
-		/// 言語ビューモデル
-		/// </summary>
-		private Language lang = new Language();
+		private string Url { get; } = string.Empty;
 		#endregion
 
 		// イベントハンドラ
@@ -46,7 +39,7 @@ namespace PokeAPIView
 		{
 			InitializeComponent();
 
-			this.url = url;
+			this.Url = url;
 		}
 		#endregion
 
@@ -58,19 +51,36 @@ namespace PokeAPIView
 		/// <param name="e"></param>
 		private void Window_Loaded(object sender, RoutedEventArgs e)
 		{
-			lang.GetLanguage(url);
-
-			DataContext = lang;
+			viewModel.GetLanguage(Url);
 		}
 		#endregion
 
-		#region 閉じる
+		#region 言語詳細ボタン クリック
 		/// <summary>
-		/// 閉じる
+		/// 言語詳細ボタン クリック
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void closeButton_Click(object sender, RoutedEventArgs e)
+		private void NamesDetailButton_Click(object sender, RoutedEventArgs e)
+		{
+			Name name = namesGrid.SelectedItem as Name;
+
+			if(name != null) {
+				LanguageWindow window = new LanguageWindow(name.LanguageURL);
+
+				window.Owner = this;
+				window.ShowDialog();
+			}
+		}
+		#endregion
+
+		#region 閉じるボタン クリック
+		/// <summary>
+		/// 閉じるボタン クリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void CloseButton_Click(object sender, RoutedEventArgs e)
 		{
 			Close();
 		}

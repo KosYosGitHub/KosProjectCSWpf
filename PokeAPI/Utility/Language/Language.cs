@@ -134,6 +134,13 @@ namespace PokeAPI
 			// 解析
 			model.GetLanguageJson(json);
 			model.IsGeted = true;
+
+			// プロパティ更新
+			RaisePropertyChanged(nameof(ID));
+			RaisePropertyChanged(nameof(Name));
+			RaisePropertyChanged(nameof(Official));
+			RaisePropertyChanged(nameof(Iso639));
+			RaisePropertyChanged(nameof(Iso3166));
 		}
 		#endregion
 	}
