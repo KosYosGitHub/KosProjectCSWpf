@@ -8,6 +8,11 @@
 	Title="PokeAPI Viewer" Height="1024" Width="1280"
 	WindowStartupLocation="CenterScreen"
 	Loaded="Window_Loaded">
+
+	<Window.DataContext>
+		<local:MenuViewModel x:Name="viewModel"/>
+	</Window.DataContext>
+	
 	<Grid Margin="10">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="1*"/>

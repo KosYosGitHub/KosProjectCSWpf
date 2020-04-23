@@ -20,15 +20,6 @@ namespace PokeAPIView
 	/// </summary>
 	public partial class MenuWindow : Window
 	{
-		// メンバ変数
-
-		#region メニュー画面のビューモデル
-		/// <summary>
-		/// メニュー画面のビューモデル
-		/// </summary>
-		private MenuViewModel menu = new MenuViewModel();
-		#endregion
-
 		// イベントハンドラ
 
 		#region コンストラクタ
@@ -50,9 +41,7 @@ namespace PokeAPIView
 		private void Window_Loaded(object sender, RoutedEventArgs e)
 		{
 			// コマンドの初期化
-			menu.InitializeCommandBindings(CommandBindings);
-
-			this.DataContext = menu;
+			viewModel.InitializeCommandBindings(CommandBindings);
 		}
 		#endregion
 	}
