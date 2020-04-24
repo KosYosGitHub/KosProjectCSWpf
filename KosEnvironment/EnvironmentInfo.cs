@@ -36,7 +36,6 @@ namespace KosEnvironment
 
 		public EnvironmentInfo()
 		{
-			OperatingSystem os = Environment.OSVersion;
 			using(ManagementClass mc = new ManagementClass("Win32_OperatingSystem")) {
 				using(ManagementObjectCollection moc = mc.GetInstances()) {
 					foreach(ManagementObject mo in moc) {
