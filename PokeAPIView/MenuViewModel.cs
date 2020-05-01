@@ -186,6 +186,90 @@ namespace PokeAPIView
 		public RelayCommand MoveCategoryClick { get; }
 		#endregion
 
+		#region 技ダメージクラスクリックコマンド
+		/// <summary>
+		/// 技ダメージクラスクリックコマンド
+		/// </summary>
+		public RelayCommand MoveDamageClassClick { get; }
+		#endregion
+
+		#region 技習得方法クリックコマンド
+		/// <summary>
+		/// 技習得方法クリックコマンド
+		/// </summary>
+		public RelayCommand MoveLearnMethodClick { get; }
+		#endregion
+
+		#region 技ターゲットクリックコマンド
+		/// <summary>
+		/// 技ターゲットクリックコマンド
+		/// </summary>
+		public RelayCommand MoveTargetClick { get; }
+		#endregion
+
+		#region 特性クリックコマンド
+		/// <summary>
+		/// 特性クリックコマンド
+		/// </summary>
+		public RelayCommand AbilityClick { get; }
+		#endregion
+
+		#region 卵グループクリックコマンド
+		/// <summary>
+		/// 卵グループクリックコマンド
+		/// </summary>
+		public RelayCommand EggGroupClick { get; }
+		#endregion
+
+		#region 性別クリックコマンド
+		/// <summary>
+		/// 性別クリックコマンド
+		/// </summary>
+		public RelayCommand GenderClick { get; }
+		#endregion
+
+		#region 成長レートクリックコマンド
+		/// <summary>
+		/// 成長レートクリックコマンド
+		/// </summary>
+		public RelayCommand GrowthRateClick { get; }
+		#endregion
+
+		#region 性格クリックコマンド
+		/// <summary>
+		/// 性格クリックコマンド
+		/// </summary>
+		public RelayCommand NatureClick { get; }
+		#endregion
+
+		#region ポケアスロンステータスクリックコマンド
+		/// <summary>
+		/// ポケアスロンステータスクリックコマンド
+		/// </summary>
+		public RelayCommand PokeathlonStatClick { get; }
+		#endregion
+
+		#region ポケモンクリックコマンド
+		/// <summary>
+		/// ポケモンクリックコマンド
+		/// </summary>
+		public RelayCommand PokemonClick { get; }
+		#endregion
+
+		#region ポケモン色クリックコマンド
+		/// <summary>
+		/// ポケモン色クリックコマンド
+		/// </summary>
+		public RelayCommand PokemonColorClick { get; }
+		#endregion
+
+		#region ポケモンフォルムクリックコマンド
+		/// <summary>
+		/// ポケモンフォルムクリックコマンド
+		/// </summary>
+		public RelayCommand PokemonFormClick { get; }
+		#endregion
+
 		#region 言語ボタンクリックコマンド
 		/// <summary>
 		/// 言語ボタンクリックコマンド
@@ -241,6 +325,20 @@ namespace PokeAPIView
 			MoveAilmentClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ステータス異常技(Move Ailment)", new MoveAilmentList(), typeof(Window)));
 			MoveBattleStyleClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("技スタイル(Move Battle Style)", new MoveBattleStyleList(), typeof(Window)));
 			MoveCategoryClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("技カテゴリ(Move Category)", new MoveCategoryList(), typeof(Window)));
+			MoveDamageClassClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("技ダメージクラス(Move Damage Class)", new MoveDamageClassList(), typeof(Window)));
+			MoveLearnMethodClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("技習得方法(Move Learn Method)", new MoveLearnMethodList(), typeof(Window)));
+			MoveTargetClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("技ターゲット(Move Target)", new MoveTargetList(), typeof(Window)));
+
+			// Pokemon
+			AbilityClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("特性(Ability)", new AbilityList(), typeof(Window)));
+			EggGroupClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("卵グループ(EggGroup)", new EggGroupList(), typeof(Window)));
+			GenderClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("性別(Gender)", new GenderList(), typeof(Window)));
+			GrowthRateClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("成長レート(GrowthRate)", new GrowthRateList(), typeof(Window)));
+			NatureClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("性格(Nature)", new NatureList(), typeof(Window)));
+			PokeathlonStatClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ポケアスロンステータス(PokeathlonStat)", new PokeathlonStatList(), typeof(Window)));
+			PokemonClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ポケモン(Pokemon)", new PokemonList(), typeof(Window)));
+			PokemonColorClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ポケモン色(PokemonColor)", new PokemonColorList(), typeof(Window)));
+			PokemonFormClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ポケモンフォルム(PokemoForm)", new PokemonFormList(), typeof(Window)));
 
 			// Utility
 			LanguageClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("言語(Language)", new LanguageList(), typeof(LanguageWindow)));

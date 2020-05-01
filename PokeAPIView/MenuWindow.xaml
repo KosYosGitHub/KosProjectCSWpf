@@ -160,6 +160,8 @@
 				<ColumnDefinition Width="1*"/>
 				<ColumnDefinition Width="10"/>
 				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="10"/>
+				<ColumnDefinition Width="1*"/>
 			</Grid.ColumnDefinitions>
 
 			<Grid Grid.Column="0">
@@ -190,10 +192,36 @@
 					<Button Content="Move Ailment" Height="24" Command="{Binding MoveAilmentClick}"/>
 					<Button Content="Move Battle Style" Height="24" Command="{Binding MoveBattleStyleClick}"/>
 					<Button Content="Move Category" Height="24" Command="{Binding MoveCategoryClick}"/>
+					<Button Content="Move Damage Class" Height="24" Command="{Binding MoveDamageClassClick}"/>
+					<Button Content="Move Learn Method" Height="24" Command="{Binding MoveLearnMethodClick}"/>
+					<Button Content="Move Target" Height="24" Command="{Binding MoveTargetClick}"/>
 				</StackPanel>
 			</Grid>
 
 			<Grid Grid.Column="4">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="24"/>
+					<RowDefinition Height="10"/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+
+				<Label Grid.Row="0" Content="Pokemon" HorizontalAlignment="Center"/>
+
+				<StackPanel Grid.Row="2">
+					<Button Content="Ability" Height="24" Command="{Binding AbilityClick}"/>
+					<Button Content="Characteristic" Height="24" IsEnabled="False"/>
+					<Button Content="Egg Group" Height="24" Command="{Binding EggGroupClick}"/>
+					<Button Content="Gender" Height="24" Command="{Binding GenderClick}"/>
+					<Button Content="Growth Rate" Height="24" Command="{Binding GrowthRateClick}"/>
+					<Button Content="Nature" Height="24" Command="{Binding NatureClick}"/>
+					<Button Content="Pokeathlon Stat" Height="24" Command="{Binding PokeathlonStatClick}"/>
+					<Button Content="Pokemon" Height="24" Command="{Binding PokemonClick}"/>
+					<Button Content="Pokemon Color" Height="24" Command="{Binding PokemonColorClick}"/>
+					<Button Content="Pokemon Form" Height="24" Command="{Binding PokemonFormClick}"/>
+				</StackPanel>
+			</Grid>
+
+			<Grid Grid.Column="6">
 				<Grid.RowDefinitions>
 					<RowDefinition Height="24"/>
 					<RowDefinition Height="10"/>
