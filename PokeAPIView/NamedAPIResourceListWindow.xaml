@@ -38,7 +38,7 @@
 
 				<b:Interaction.Triggers>
 					<b:EventTrigger EventName="SelectionChanged">
-						<b:InvokeCommandAction Command="{x:Static local:NamedAPIResourceListViewModel.SelectedChangedCommand}"/>
+						<b:InvokeCommandAction Command="{Binding SelectedChangedCommand}" CommandParameter="{Binding ElementName=namedAPIResourceListDataGrid}"/>
 					</b:EventTrigger>
 				</b:Interaction.Triggers>
 			</DataGrid>
@@ -67,7 +67,7 @@
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
 
-					<Button Grid.Column="0" Content="詳細" Command="{x:Static local:NamedAPIResourceListViewModel.DetailClickCommand}"/>
+					<Button Grid.Column="0" Content="詳細" Command="{Binding DetailClickCommand}"/>
 				</Grid>
 
 			</Grid>

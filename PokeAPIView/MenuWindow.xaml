@@ -6,8 +6,7 @@
 	xmlns:local="clr-namespace:PokeAPIView"
 	mc:Ignorable="d"
 	Title="PokeAPI Viewer" Height="1024" Width="1280"
-	WindowStartupLocation="CenterScreen"
-	Loaded="Window_Loaded">
+	WindowStartupLocation="CenterScreen">
 
 	<Window.DataContext>
 		<local:MenuViewModel x:Name="viewModel"/>
@@ -34,8 +33,8 @@
 			<Label Grid.Row="0" Content="Berries" HorizontalAlignment="Center"/>
 
 			<StackPanel Grid.Row="2">
-				<Button Content="Berry" Height="24" Command="{x:Static local:MenuViewModel.BerryClick}"/>
-				<Button Content="Berry Firmness" Height="24" Command="{x:Static local:MenuViewModel.BerryFirmnessClick}"/>
+				<Button Content="Berry" Height="24" Command="{Binding BerryClick}"/>
+				<Button Content="Berry Firmness" Height="24" Command="{Binding BerryFirmnessClick}"/>
 			</StackPanel>
 		</Grid>
 
@@ -49,10 +48,10 @@
 			<Label Grid.Row="0" Content="Games" HorizontalAlignment="Center"/>
 
 			<StackPanel Grid.Row="2">
-				<Button Content="Generation" Height="24" Command="{x:Static local:MenuViewModel.GenerationClick}"/>
-				<Button Content="Pokedex" Height="24" Command="{x:Static local:MenuViewModel.PokedexClick}"/>
-				<Button Content="Version" Height="24" Command="{x:Static local:MenuViewModel.VersionClick}"/>
-				<Button Content="VersionGroup" Height="24" Command="{x:Static local:MenuViewModel.VersionGroupClick}"/>
+				<Button Content="Generation" Height="24" Command="{Binding GenerationClick}"/>
+				<Button Content="Pokedex" Height="24" Command="{Binding PokedexClick}"/>
+				<Button Content="Version" Height="24" Command="{Binding VersionClick}"/>
+				<Button Content="VersionGroup" Height="24" Command="{Binding VersionGroupClick}"/>
 			</StackPanel>
 		</Grid>
 
@@ -66,11 +65,11 @@
 			<Label Grid.Row="0" Content="Items" HorizontalAlignment="Center"/>
 
 			<StackPanel Grid.Row="2">
-				<Button Content="Item" Height="24" Command="{x:Static local:MenuViewModel.ItemClick}"/>
-				<Button Content="ItemAttribute" Height="24" Command="{x:Static local:MenuViewModel.ItemAttributeClick}"/>
-				<Button Content="ItemCategory" Height="24" Command="{x:Static local:MenuViewModel.ItemCategoryClick}"/>
-				<Button Content="ItemFlingEffect" Height="24" Command="{x:Static local:MenuViewModel.ItemFlingEffectClick}"/>
-				<Button Content="ItemPocket" Height="24" Command="{x:Static local:MenuViewModel.ItemPocketClick}"/>
+				<Button Content="Item" Height="24" Command="{Binding ItemClick}"/>
+				<Button Content="ItemAttribute" Height="24" Command="{Binding ItemAttributeClick}"/>
+				<Button Content="ItemCategory" Height="24" Command="{Binding ItemCategoryClick}"/>
+				<Button Content="ItemFlingEffect" Height="24" Command="{Binding ItemFlingEffectClick}"/>
+				<Button Content="ItemPocket" Height="24" Command="{Binding ItemPocketClick}"/>
 			</StackPanel>
 		</Grid>
 
@@ -84,7 +83,7 @@
 			<Label Grid.Row="0" Content="Utility" HorizontalAlignment="Center"/>
 
 			<StackPanel Grid.Row="2">
-				<Button Content="Language" Height="24" Command="{x:Static local:MenuViewModel.LanguageClick}"/>
+				<Button Content="Language" Height="24" Command="{Binding LanguageClick}"/>
 			</StackPanel>
 		</Grid>
 		

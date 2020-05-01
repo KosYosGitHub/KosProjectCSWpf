@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using PokeAPI;
 
 namespace PokeAPIView
@@ -39,7 +27,7 @@ namespace PokeAPIView
 		{
 			InitializeComponent();
 
-			this.Url = url;
+			Url = url;
 		}
 		#endregion
 
@@ -63,12 +51,10 @@ namespace PokeAPIView
 		/// <param name="e"></param>
 		private void NamesDetailButton_Click(object sender, RoutedEventArgs e)
 		{
-			Name name = namesGrid.SelectedItem as Name;
-
-			if(name != null) {
-				LanguageWindow window = new LanguageWindow(name.LanguageURL);
-
-				window.Owner = this;
+			if(namesGrid.SelectedItem is Name name) {
+				LanguageWindow window = new LanguageWindow(name.LanguageURL) {
+					Owner = this
+				};
 				window.ShowDialog();
 			}
 		}

@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
+using GalaSoft.MvvmLight.CommandWpf;
 using KosMVVM;
 using PokeAPI;
 
@@ -14,22 +11,6 @@ namespace PokeAPIView
 {
 	public class NamedAPIResourceListViewModel : KosViewModel
 	{
-		// コマンド
-
-		#region 選択変更コマンド
-		/// <summary>
-		/// 選択変更コマンド
-		/// </summary>
-		public static readonly RoutedCommand SelectedChangedCommand = new RoutedCommand("SelectChangedCommand", typeof(NamedAPIResourceListViewModel));
-		#endregion
-
-		#region 詳細ボタンクリックコマンド
-		/// <summary>
-		/// 詳細ボタンクリックコマンド
-		/// </summary>
-		public static readonly RoutedCommand DetailClickCommand = new RoutedCommand("DetailClickCommand", typeof(NamedAPIResourceListViewModel));
-		#endregion
-
 		// メンバ変数
 
 		#region 名称キャプション
@@ -69,6 +50,20 @@ namespace PokeAPIView
 		public Type DetailWindowType { get; set; }
 		#endregion
 
+		#region 選択変更コマンド
+		/// <summary>
+		/// 選択変更コマンド
+		/// </summary>
+		public RelayCommand<DataGrid> SelectedChangedCommand { get; }
+		#endregion
+
+		#region 詳細ボタンクリックコマンド
+		/// <summary>
+		/// 詳細ボタンクリックコマンド
+		/// </summary>
+		public RelayCommand DetailClickCommand { get; }
+		#endregion
+
 		// private プロパティ
 
 		#region 選択中オブジェクト
@@ -92,6 +87,9 @@ namespace PokeAPIView
 			NameCaption = nameCaption ?? throw new ArgumentNullException(nameof(nameCaption));
 			NamedAPIResrouceList = namedAPIResourceList ?? throw new ArgumentNullException(nameof(namedAPIResourceList));
 			DetailWindowType = detailWindowType;
+
+			SelectedChangedCommand = new RelayCommand<DataGrid>(SelectedChanged);
+			DetailClickCommand = new RelayCommand(DetailClick);
 		}
 		#endregion
 
@@ -99,17 +97,11 @@ namespace PokeAPIView
 		/// <summary>
 		/// 選択変更
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void SelectedChanged(object sender, RoutedEventArgs e)
+		/// <param name="dataGrid">データグリッド</param>
+		private void SelectedChanged(DataGrid dataGrid)
 		{
-			NamedAPIResourceListWindow window = sender as NamedAPIResourceListWindow;
-			if(window == null) {
-				return;
-			}
-
-			if(window.namedAPIResourceListDataGrid.IsLoaded) {
-				Selected = (window.namedAPIResourceListDataGrid.SelectedItem as NamedAPIResource);
+			if(dataGrid.IsLoaded) {
+				Selected = (dataGrid.SelectedItem as NamedAPIResource);
 			}
 		}
 		#endregion
@@ -118,9 +110,7 @@ namespace PokeAPIView
 		/// <summary>
 		/// 詳細ボタン クリック
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void DetailClick(object sender, RoutedEventArgs e)
+		private void DetailClick()
 		{
 			if(Selected == null) {
 				return;
@@ -136,18 +126,6 @@ namespace PokeAPIView
 		#endregion
 
 		// public メソッド
-
-		#region コマンドの初期化
-		/// <summary>
-		/// コマンドの初期化
-		/// </summary>
-		/// <param name="commands">Command Binding Collection</param>
-		public void InitializeCommandBindings(CommandBindingCollection commands)
-		{
-			commands.Add(new CommandBinding(SelectedChangedCommand, SelectedChanged));
-			commands.Add(new CommandBinding(DetailClickCommand, DetailClick));
-		}
-		#endregion
 
 		#region 名前付きAPIリソースリストの取得
 		/// <summary>

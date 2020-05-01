@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using Newtonsoft.Json.Linq;
 
 namespace PokeAPI
@@ -13,15 +8,6 @@ namespace PokeAPI
 	/// </summary>
 	internal class LanguageModel
 	{
-		// メンバ変数
-
-		#region 名称リスト
-		/// <summary>
-		/// 名称リスト
-		/// </summary>
-		private ObservableCollection<Name> names = new ObservableCollection<Name>();
-		#endregion
-
 		// プロパティ
 
 		#region ID
@@ -63,10 +49,7 @@ namespace PokeAPI
 		/// <summary>
 		/// 名称リスト
 		/// </summary>
-		internal ObservableCollection<Name> Names
-		{
-			get => names;
-		}
+		internal ObservableCollection<Name> Names { get; } = new ObservableCollection<Name>();
 		#endregion
 
 		#region 取得済フラグ
@@ -95,7 +78,7 @@ namespace PokeAPI
 
 			// 言語名称
 			NameParser parser = new NameParser();
-			parser.ParseNameList(obj, "names", names);
+			parser.ParseNameList(obj, "names", Names);
 		}
 		#endregion
 	}
