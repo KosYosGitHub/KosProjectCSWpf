@@ -270,6 +270,41 @@ namespace PokeAPIView
 		public RelayCommand PokemonFormClick { get; }
 		#endregion
 
+		#region ポケモン生息地クリックコマンド
+		/// <summary>
+		/// ポケモン生息地クリックコマンド
+		/// </summary>
+		public RelayCommand PokemonHabitatClick { get; }
+		#endregion
+
+		#region ポケモンの形クリックコマンド
+		/// <summary>
+		/// ポケモンの形クリックコマンド
+		/// </summary>
+		public RelayCommand PokemonShapeClick { get; }
+		#endregion
+
+		#region ポケモン種族クリックコマンド
+		/// <summary>
+		/// ポケモン種族クリックコマンド
+		/// </summary>
+		public RelayCommand PokemonSpeciesClick { get; }
+		#endregion
+
+		#region ステータスクリックコマンド
+		/// <summary>
+		/// ステータスクリックコマンド
+		/// </summary>
+		public RelayCommand StatClick { get; }
+		#endregion
+
+		#region タイプクリックコマンド
+		/// <summary>
+		/// タイプクリックコマンド
+		/// </summary>
+		public RelayCommand TypeClick { get; }
+		#endregion
+
 		#region 言語ボタンクリックコマンド
 		/// <summary>
 		/// 言語ボタンクリックコマンド
@@ -339,6 +374,11 @@ namespace PokeAPIView
 			PokemonClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ポケモン(Pokemon)", new PokemonList(), typeof(Window)));
 			PokemonColorClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ポケモン色(PokemonColor)", new PokemonColorList(), typeof(Window)));
 			PokemonFormClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ポケモンフォルム(PokemoForm)", new PokemonFormList(), typeof(Window)));
+			PokemonHabitatClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ポケモン生息地(PokemonHabitat)", new PokemonHabitatList(), typeof(Window)));
+			PokemonShapeClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ポケモンの形(PokemonShape)", new PokemonShapeList(), typeof(Window)));
+			PokemonSpeciesClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ポケモン種族(PokemonSpecies)", new PokemonSpeciesList(), typeof(Window)));
+			StatClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ステータス(Stat)", new StatList(), typeof(Window)));
+			TypeClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("タイプ(Type)", new TypeList(), typeof(Window)));
 
 			// Utility
 			LanguageClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("言語(Language)", new LanguageList(), typeof(LanguageWindow)));

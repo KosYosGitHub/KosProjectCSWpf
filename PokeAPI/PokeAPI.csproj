@@ -97,7 +97,12 @@
     <Compile Include="Pokemon\PokeathlonStat\PokeathlonStatList.cs" />
     <Compile Include="Pokemon\PokemonColor\PokemonColorList.cs" />
     <Compile Include="Pokemon\PokemonForm\PokemonFormList.cs" />
+    <Compile Include="Pokemon\PokemonHabitat\PokemonHabitatList.cs" />
+    <Compile Include="Pokemon\PokemonShape\PokemonShapeList.cs" />
+    <Compile Include="Pokemon\PokemonSpecies\PokemonSpeciesList.cs" />
     <Compile Include="Pokemon\Pokemon\PokemonList.cs" />
+    <Compile Include="Pokemon\Stat\StatList.cs" />
+    <Compile Include="Pokemon\Type\TypeList.cs" />
     <Compile Include="Utility\CommonModels\NamedAPIResource\NamedAPIResource.cs" />
     <Compile Include="Utility\CommonModels\NamedAPIResource\NamedAPIResourceList.cs" />
     <Compile Include="Utility\CommonModels\NamedAPIResource\NamedAPIResourceParser.cs" />

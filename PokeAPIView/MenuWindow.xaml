@@ -218,6 +218,11 @@
 					<Button Content="Pokemon" Height="24" Command="{Binding PokemonClick}"/>
 					<Button Content="Pokemon Color" Height="24" Command="{Binding PokemonColorClick}"/>
 					<Button Content="Pokemon Form" Height="24" Command="{Binding PokemonFormClick}"/>
+					<Button Content="Pokemon Habitat" Height="24" Command="{Binding PokemonHabitatClick}"/>
+					<Button Content="Pokemon Shape" Height="24" Command="{Binding PokemonShapeClick}"/>
+					<Button Content="Pokemon Species" Height="24" Command="{Binding PokemonSpeciesClick}"/>
+					<Button Content="Stat" Height="24" Command="{Binding StatClick}"/>
+					<Button Content="Type" Height="24" Command="{Binding TypeClick}"/>
 				</StackPanel>
 			</Grid>
 
