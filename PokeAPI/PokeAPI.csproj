@@ -60,6 +60,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Berries\BerryFirmness\BerryFirmnessList.cs" />
+    <Compile Include="Berries\Berry\BerryList.cs" />
     <Compile Include="Games\Generation\GenerationList.cs" />
     <Compile Include="Games\Pokedexes\PokedexList.cs" />
     <Compile Include="Games\VersionGroup\VersionGroupList.cs" />
@@ -95,5 +97,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
