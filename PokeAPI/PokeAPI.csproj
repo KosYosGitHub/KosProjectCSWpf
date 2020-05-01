@@ -77,6 +77,14 @@
     <Compile Include="Items\ItemFlingEffect\ItemFlingEffectList.cs" />
     <Compile Include="Items\ItemPocket\ItemPocketList.cs" />
     <Compile Include="Items\Item\ItemList.cs" />
+    <Compile Include="Locations\LocationArea\LocationAreaList.cs" />
+    <Compile Include="Locations\Location\LocationList.cs" />
+    <Compile Include="Locations\PalParkArea\PalParkAreaList.cs" />
+    <Compile Include="Locations\Region\RegionList.cs" />
+    <Compile Include="Moves\MoveAilment\MoveAilmentList.cs" />
+    <Compile Include="Moves\MoveBattleStyle\MoveBattleStyleList.cs" />
+    <Compile Include="Moves\MoveCategory\MoveCategoryList.cs" />
+    <Compile Include="Moves\Move\MoveList.cs" />
     <Compile Include="PokeAPIClient.cs" />
     <Compile Include="Utility\CommonModels\NamedAPIResource\NamedAPIResource.cs" />
     <Compile Include="Utility\CommonModels\NamedAPIResource\NamedAPIResourceList.cs" />
@@ -103,6 +111,8 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Machines\Machine\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

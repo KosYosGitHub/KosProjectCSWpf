@@ -130,6 +130,62 @@ namespace PokeAPIView
 		public RelayCommand ItemPocketClick { get; }
 		#endregion
 
+		#region 場所クリックコマンド
+		/// <summary>
+		/// 場所クリックコマンド
+		/// </summary>
+		public RelayCommand LocationClick { get; }
+		#endregion
+
+		#region 場所エリアクリックコマンド
+		/// <summary>
+		/// 場所エリアクリックコマンド
+		/// </summary>
+		public RelayCommand LocationAreaClick { get; }
+		#endregion
+
+		#region パルパークエリアクリックコマンド
+		/// <summary>
+		/// パルパークエリアクリックコマンド
+		/// </summary>
+		public RelayCommand PalParkAreaClick { get; }
+		#endregion
+
+		#region 地方クリックコマンド
+		/// <summary>
+		/// 地方クリックコマンド
+		/// </summary>
+		public RelayCommand RegionClick { get; }
+		#endregion
+
+		#region 技クリックコマンド
+		/// <summary>
+		/// 技クリックコマンド
+		/// </summary>
+		public RelayCommand MoveClick { get; }
+		#endregion
+
+		#region ステータス異常技クリックコマンド
+		/// <summary>
+		/// ステータス異常技クリックコマンド
+		/// </summary>
+		public RelayCommand MoveAilmentClick { get; }
+		#endregion
+
+		#region 技スタイルクリックコマンド
+		/// <summary>
+		/// 技スタイルクリックコマンド
+		/// </summary>
+		public RelayCommand MoveBattleStyleClick { get; }
+		#endregion
+
+		#region 技カテゴリクリックコマンド
+		/// <summary>
+		/// 技カテゴリクリックコマンド
+		/// </summary>
+		public RelayCommand MoveCategoryClick { get; }
+		#endregion
+
 		#region 言語ボタンクリックコマンド
 		/// <summary>
 		/// 言語ボタンクリックコマンド
@@ -147,19 +203,19 @@ namespace PokeAPIView
 		{
 			// Berries
 			BerryClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ベリー(Berry)", new BerryList(), typeof(Window)));
-			BerryFirmnessClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ベリーの固さ(Berry Firmness)", new BerryFirmnessList(), typeof(Window)));
-			BerryFlavorClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ベリーの味(Berry Flavor)", new BerryFlavorList(), typeof(Window)));
+			BerryFirmnessClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ベリーの固さ(BerryFirmness)", new BerryFirmnessList(), typeof(Window)));
+			BerryFlavorClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ベリーの味(BerryFlavor)", new BerryFlavorList(), typeof(Window)));
 
 			// Contests
-			ContestTypeClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("コンテストタイプ(Contest Type)", new ContestTypeList(), typeof(Window)));
+			ContestTypeClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("コンテストタイプ(ContestType)", new ContestTypeList(), typeof(Window)));
 
 			// Encounters
-			EncounterMethodClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("エンカウントの方法(Encounter Method)", new EncounterMethodList(), typeof(Window)));
-			EncounterConditionClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("エンカウント条件(Encounter Condition)", new EncounterConditionList(), typeof(Window)));
-			EncounterConditionValueClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("エンカウント条件値(Encounter Condition Value)", new EncounterConditionValueList(), typeof(Window)));
+			EncounterMethodClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("エンカウントの方法(EncounterMethod)", new EncounterMethodList(), typeof(Window)));
+			EncounterConditionClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("エンカウント条件(EncounterCondition)", new EncounterConditionList(), typeof(Window)));
+			EncounterConditionValueClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("エンカウント条件値(EncounterConditionValue)", new EncounterConditionValueList(), typeof(Window)));
 
 			// Evolution
-			EvolutionTriggerClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("進化トリガー(Evolution Trigger)", new EvolutionTriggerList(), typeof(Window)));
+			EvolutionTriggerClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("進化トリガー(EvolutionTrigger)", new EvolutionTriggerList(), typeof(Window)));
 
 			// Games
 			GenerationClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("世代(Generation)", new GenerationList(), typeof(Window)));
@@ -173,6 +229,18 @@ namespace PokeAPIView
 			ItemCategoryClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("アイテムカテゴリ(ItemCategory)", new ItemCategoryList(), typeof(Window)));
 			ItemFlingEffectClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("アイテムフリング効果(ItemFlingEffect)", new ItemFlingEffectList(), typeof(Window)));
 			ItemPocketClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("アイテムポケット(ItemPocket)", new ItemPocketList(), typeof(Window)));
+
+			// Locations
+			LocationClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("場所(Location)", new LocationList(), typeof(Window)));
+			LocationAreaClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("場所エリア(LocationArea)", new LocationAreaList(), typeof(Window)));
+			PalParkAreaClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("パルパークエリア(PalParkArea)", new PalParkAreaList(), typeof(Window)));
+			RegionClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("地方(Region)", new RegionList(), typeof(Window)));
+
+			// Moves
+			MoveClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("技(Move)", new MoveList(), typeof(Window)));
+			MoveAilmentClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ステータス異常技(Move Ailment)", new MoveAilmentList(), typeof(Window)));
+			MoveBattleStyleClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("技スタイル(Move Battle Style)", new MoveBattleStyleList(), typeof(Window)));
+			MoveCategoryClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("技カテゴリ(Move Category)", new MoveCategoryList(), typeof(Window)));
 
 			// Utility
 			LanguageClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("言語(Language)", new LanguageList(), typeof(LanguageWindow)));

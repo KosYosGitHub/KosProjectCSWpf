@@ -11,135 +11,203 @@
 	<Window.DataContext>
 		<local:MenuViewModel x:Name="viewModel"/>
 	</Window.DataContext>
-	
+
 	<Grid Margin="10">
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="1*"/>
-			<ColumnDefinition Width="10"/>
-			<ColumnDefinition Width="1*"/>
-			<ColumnDefinition Width="10"/>
-			<ColumnDefinition Width="1*"/>
-			<ColumnDefinition Width="10"/>
-			<ColumnDefinition Width="1*"/>
-			<ColumnDefinition Width="10"/>
-			<ColumnDefinition Width="1*"/>
-			<ColumnDefinition Width="10"/>
-			<ColumnDefinition Width="1*"/>
-			<ColumnDefinition Width="10"/>
-			<ColumnDefinition Width="1*"/>
-		</Grid.ColumnDefinitions>
-
-		<Grid Grid.Column="0">
-			<Grid.RowDefinitions>
-				<RowDefinition Height="24"/>
-				<RowDefinition Height="10"/>
-				<RowDefinition/>
-			</Grid.RowDefinitions>
-
-			<Label Grid.Row="0" Content="Berries" HorizontalAlignment="Center"/>
-
-			<StackPanel Grid.Row="2">
-				<Button Content="Berry" Height="24" Command="{Binding BerryClick}"/>
-				<Button Content="Berry Firmness" Height="24" Command="{Binding BerryFirmnessClick}"/>
-				<Button Content="Berry Flavor" Height="24" Command="{Binding BerryFlavorClick}"/>
-			</StackPanel>
-		</Grid>
-
-		<Grid Grid.Column="2">
-			<Grid.RowDefinitions>
-				<RowDefinition Height="24"/>
-				<RowDefinition Height="10"/>
-				<RowDefinition/>
-			</Grid.RowDefinitions>
-
-			<Label Grid.Row="0" Content="Contests" HorizontalAlignment="Center"/>
-
-			<StackPanel Grid.Row="2">
-				<Button Content="Contest Type" Command="{Binding ContestTypeClick}"/>
-				<Button Content="Contest Effect" IsEnabled="False"/>
-				<Button Content="Super Contest Effect" IsEnabled="False"/>
-			</StackPanel>
-		</Grid>
-
-		<Grid Grid.Column="4">
-			<Grid.RowDefinitions>
-				<RowDefinition Height="24"/>
-				<RowDefinition Height="10"/>
-				<RowDefinition/>
-			</Grid.RowDefinitions>
-
-			<Label Grid.Row="0" Content="Encounters" HorizontalAlignment="Center"/>
-
-			<StackPanel Grid.Row="2">
-				<Button Content="Encounter Method" Command="{Binding EncounterMethodClick}"/>
-				<Button Content="Encounter Condition" Command="{Binding EncounterConditionClick}"/>
-				<Button Content="Encounter Condition Value" Command="{Binding EncounterConditionValueClick}"/>
-			</StackPanel>
-		</Grid>
-
-		<Grid Grid.Column="6">
-			<Grid.RowDefinitions>
-				<RowDefinition Height="24"/>
-				<RowDefinition Height="10"/>
-				<RowDefinition/>
-			</Grid.RowDefinitions>
-
-			<Label Grid.Row="0" Content="Evolution" HorizontalAlignment="Center"/>
-
-			<StackPanel Grid.Row="2">
-				<Button Content="Evolution Chain" IsEnabled="False"/>
-				<Button Content="Evolution Trigger" Command="{Binding EvolutionTriggerClick}"/>
-			</StackPanel>
-		</Grid>
-
-		<Grid Grid.Column="8">
-			<Grid.RowDefinitions>
-				<RowDefinition Height="24"/>
-				<RowDefinition Height="10"/>
-				<RowDefinition/>
-			</Grid.RowDefinitions>
-
-			<Label Grid.Row="0" Content="Games" HorizontalAlignment="Center"/>
-
-			<StackPanel Grid.Row="2">
-				<Button Content="Generation" Height="24" Command="{Binding GenerationClick}"/>
-				<Button Content="Pokedex" Height="24" Command="{Binding PokedexClick}"/>
-				<Button Content="Version" Height="24" Command="{Binding VersionClick}"/>
-				<Button Content="VersionGroup" Height="24" Command="{Binding VersionGroupClick}"/>
-			</StackPanel>
-		</Grid>
-
-		<Grid Grid.Column="10">
-			<Grid.RowDefinitions>
-				<RowDefinition Height="24"/>
-				<RowDefinition Height="10"/>
-				<RowDefinition/>
-			</Grid.RowDefinitions>
-
-			<Label Grid.Row="0" Content="Items" HorizontalAlignment="Center"/>
-
-			<StackPanel Grid.Row="2">
-				<Button Content="Item" Height="24" Command="{Binding ItemClick}"/>
-				<Button Content="ItemAttribute" Height="24" Command="{Binding ItemAttributeClick}"/>
-				<Button Content="ItemCategory" Height="24" Command="{Binding ItemCategoryClick}"/>
-				<Button Content="ItemFlingEffect" Height="24" Command="{Binding ItemFlingEffectClick}"/>
-				<Button Content="ItemPocket" Height="24" Command="{Binding ItemPocketClick}"/>
-			</StackPanel>
-		</Grid>
-
-		<Grid Grid.Column="12">
-			<Grid.RowDefinitions>
-				<RowDefinition Height="24"/>
-				<RowDefinition Height="10"/>
-				<RowDefinition/>
-			</Grid.RowDefinitions>
-			
-			<Label Grid.Row="0" Content="Utility" HorizontalAlignment="Center"/>
-
-			<StackPanel Grid.Row="2">
-				<Button Content="Language" Height="24" Command="{Binding LanguageClick}"/>
-			</StackPanel>
-		</Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="15"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
 		
+		<Grid Grid.Row="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="10"/>
+				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="10"/>
+				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="10"/>
+				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="10"/>
+				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="10"/>
+				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="10"/>
+				<ColumnDefinition Width="1*"/>
+			</Grid.ColumnDefinitions>
+
+			<Grid Grid.Column="0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="24"/>
+					<RowDefinition Height="10"/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+
+				<Label Grid.Row="0" Content="Berries" HorizontalAlignment="Center"/>
+
+				<StackPanel Grid.Row="2">
+					<Button Content="Berry" Height="24" Command="{Binding BerryClick}"/>
+					<Button Content="Berry Firmness" Height="24" Command="{Binding BerryFirmnessClick}"/>
+					<Button Content="Berry Flavor" Height="24" Command="{Binding BerryFlavorClick}"/>
+				</StackPanel>
+			</Grid>
+
+			<Grid Grid.Column="2">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="24"/>
+					<RowDefinition Height="10"/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+
+				<Label Grid.Row="0" Content="Contests" HorizontalAlignment="Center"/>
+
+				<StackPanel Grid.Row="2">
+					<Button Content="Contest Type" Command="{Binding ContestTypeClick}"/>
+					<Button Content="Contest Effect" IsEnabled="False"/>
+					<Button Content="Super Contest Effect" IsEnabled="False"/>
+				</StackPanel>
+			</Grid>
+
+			<Grid Grid.Column="4">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="24"/>
+					<RowDefinition Height="10"/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+
+				<Label Grid.Row="0" Content="Encounters" HorizontalAlignment="Center"/>
+
+				<StackPanel Grid.Row="2">
+					<Button Content="Encounter Method" Command="{Binding EncounterMethodClick}"/>
+					<Button Content="Encounter Condition" Command="{Binding EncounterConditionClick}"/>
+					<Button Content="Encounter Condition Value" Command="{Binding EncounterConditionValueClick}"/>
+				</StackPanel>
+			</Grid>
+
+			<Grid Grid.Column="6">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="24"/>
+					<RowDefinition Height="10"/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+
+				<Label Grid.Row="0" Content="Evolution" HorizontalAlignment="Center"/>
+
+				<StackPanel Grid.Row="2">
+					<Button Content="Evolution Chain" IsEnabled="False"/>
+					<Button Content="Evolution Trigger" Command="{Binding EvolutionTriggerClick}"/>
+				</StackPanel>
+			</Grid>
+
+			<Grid Grid.Column="8">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="24"/>
+					<RowDefinition Height="10"/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+
+				<Label Grid.Row="0" Content="Games" HorizontalAlignment="Center"/>
+
+				<StackPanel Grid.Row="2">
+					<Button Content="Generation" Height="24" Command="{Binding GenerationClick}"/>
+					<Button Content="Pokedex" Height="24" Command="{Binding PokedexClick}"/>
+					<Button Content="Version" Height="24" Command="{Binding VersionClick}"/>
+					<Button Content="VersionGroup" Height="24" Command="{Binding VersionGroupClick}"/>
+				</StackPanel>
+			</Grid>
+
+			<Grid Grid.Column="10">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="24"/>
+					<RowDefinition Height="10"/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+
+				<Label Grid.Row="0" Content="Items" HorizontalAlignment="Center"/>
+
+				<StackPanel Grid.Row="2">
+					<Button Content="Item" Height="24" Command="{Binding ItemClick}"/>
+					<Button Content="ItemAttribute" Height="24" Command="{Binding ItemAttributeClick}"/>
+					<Button Content="ItemCategory" Height="24" Command="{Binding ItemCategoryClick}"/>
+					<Button Content="ItemFlingEffect" Height="24" Command="{Binding ItemFlingEffectClick}"/>
+					<Button Content="ItemPocket" Height="24" Command="{Binding ItemPocketClick}"/>
+				</StackPanel>
+			</Grid>
+
+			<Grid Grid.Column="12">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="24"/>
+					<RowDefinition Height="10"/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+
+				<Label Grid.Row="0" Content="Locations" HorizontalAlignment="Center"/>
+
+				<StackPanel Grid.Row="2">
+					<Button Content="Location" Height="24" Command="{Binding LocationClick}"/>
+					<Button Content="Location Area" Height="24" Command="{Binding LocationAreaClick}"/>
+					<Button Content="Pal Park Area" Height="24" Command="{Binding PalParkAreaClick}"/>
+					<Button Content="Region" Height="24" Command="{Binding RegionClick}"/>
+				</StackPanel>
+			</Grid>
+
+		</Grid>
+
+		<Grid Grid.Row="2">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="10"/>
+				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="10"/>
+				<ColumnDefinition Width="1*"/>
+			</Grid.ColumnDefinitions>
+
+			<Grid Grid.Column="0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="24"/>
+					<RowDefinition Height="10"/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+
+				<Label Grid.Row="0" Content="Machines" HorizontalAlignment="Center"/>
+
+				<StackPanel Grid.Row="2">
+					<Button Content="Machine" Height="24" IsEnabled="False"/>
+				</StackPanel>
+			</Grid>
+
+			<Grid Grid.Column="2">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="24"/>
+					<RowDefinition Height="10"/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+
+				<Label Grid.Row="0" Content="Moves" HorizontalAlignment="Center"/>
+
+				<StackPanel Grid.Row="2">
+					<Button Content="Move" Height="24" Command="{Binding MoveClick}"/>
+					<Button Content="Move Ailment" Height="24" Command="{Binding MoveAilmentClick}"/>
+					<Button Content="Move Battle Style" Height="24" Command="{Binding MoveBattleStyleClick}"/>
+					<Button Content="Move Category" Height="24" Command="{Binding MoveCategoryClick}"/>
+				</StackPanel>
+			</Grid>
+
+			<Grid Grid.Column="4">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="24"/>
+					<RowDefinition Height="10"/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+
+				<Label Grid.Row="0" Content="Utility" HorizontalAlignment="Center"/>
+
+				<StackPanel Grid.Row="2">
+					<Button Content="Language" Height="24" Command="{Binding LanguageClick}"/>
+				</StackPanel>
+			</Grid>
+			
+		</Grid>
+
 	</Grid>
 </Window>
