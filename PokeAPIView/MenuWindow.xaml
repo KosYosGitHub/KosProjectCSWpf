@@ -21,6 +21,12 @@
 			<ColumnDefinition Width="1*"/>
 			<ColumnDefinition Width="10"/>
 			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="10"/>
+			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="10"/>
+			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="10"/>
+			<ColumnDefinition Width="1*"/>
 		</Grid.ColumnDefinitions>
 
 		<Grid Grid.Column="0">
@@ -35,10 +41,58 @@
 			<StackPanel Grid.Row="2">
 				<Button Content="Berry" Height="24" Command="{Binding BerryClick}"/>
 				<Button Content="Berry Firmness" Height="24" Command="{Binding BerryFirmnessClick}"/>
+				<Button Content="Berry Flavor" Height="24" Command="{Binding BerryFlavorClick}"/>
 			</StackPanel>
 		</Grid>
 
 		<Grid Grid.Column="2">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="24"/>
+				<RowDefinition Height="10"/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+
+			<Label Grid.Row="0" Content="Contests" HorizontalAlignment="Center"/>
+
+			<StackPanel Grid.Row="2">
+				<Button Content="Contest Type" Command="{Binding ContestTypeClick}"/>
+				<Button Content="Contest Effect" IsEnabled="False"/>
+				<Button Content="Super Contest Effect" IsEnabled="False"/>
+			</StackPanel>
+		</Grid>
+
+		<Grid Grid.Column="4">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="24"/>
+				<RowDefinition Height="10"/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+
+			<Label Grid.Row="0" Content="Encounters" HorizontalAlignment="Center"/>
+
+			<StackPanel Grid.Row="2">
+				<Button Content="Encounter Method" Command="{Binding EncounterMethodClick}"/>
+				<Button Content="Encounter Condition" Command="{Binding EncounterConditionClick}"/>
+				<Button Content="Encounter Condition Value" Command="{Binding EncounterConditionValueClick}"/>
+			</StackPanel>
+		</Grid>
+
+		<Grid Grid.Column="6">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="24"/>
+				<RowDefinition Height="10"/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+
+			<Label Grid.Row="0" Content="Evolution" HorizontalAlignment="Center"/>
+
+			<StackPanel Grid.Row="2">
+				<Button Content="Evolution Chain" IsEnabled="False"/>
+				<Button Content="Evolution Trigger" Command="{Binding EvolutionTriggerClick}"/>
+			</StackPanel>
+		</Grid>
+
+		<Grid Grid.Column="8">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="24"/>
 				<RowDefinition Height="10"/>
@@ -55,7 +109,7 @@
 			</StackPanel>
 		</Grid>
 
-		<Grid Grid.Column="4">
+		<Grid Grid.Column="10">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="24"/>
 				<RowDefinition Height="10"/>
@@ -73,7 +127,7 @@
 			</StackPanel>
 		</Grid>
 
-		<Grid Grid.Column="6">
+		<Grid Grid.Column="12">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="24"/>
 				<RowDefinition Height="10"/>

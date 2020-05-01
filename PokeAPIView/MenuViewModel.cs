@@ -25,6 +25,48 @@ namespace PokeAPIView
 		public RelayCommand BerryFirmnessClick { get; }
 		#endregion
 
+		#region ベリーの味クリックコマンド
+		/// <summary>
+		/// ベリーの味クリックコマンド
+		/// </summary>
+		public RelayCommand BerryFlavorClick { get; }
+		#endregion
+
+		#region コンテストタイプクリックコマンド
+		/// <summary>
+		/// コンテストタイプクリックコマンド
+		/// </summary>
+		public RelayCommand ContestTypeClick { get; }
+		#endregion
+
+		#region エンカウントの方法クリックコマンド
+		/// <summary>
+		/// エンカウントの方法クリックコマンド
+		/// </summary>
+		public RelayCommand EncounterMethodClick { get; }
+		#endregion
+
+		#region エンカウント条件クリックコマンド
+		/// <summary>
+		/// エンカウント条件クリックコマンド
+		/// </summary>
+		public RelayCommand EncounterConditionClick { get; }
+		#endregion
+
+		#region エンカウント条件値クリックコマンド
+		/// <summary>
+		/// エンカウント条件値クリックコマンド
+		/// </summary>
+		public RelayCommand EncounterConditionValueClick { get; }
+		#endregion
+
+		#region 進化トリガークリックコマンド
+		/// <summary>
+		/// 進化トリガークリックコマンド
+		/// </summary>
+		public RelayCommand EvolutionTriggerClick { get; }
+		#endregion
+
 		#region 世代ボタンクリックコマンド
 		/// <summary>
 		/// 世代ボタンクリックコマンド
@@ -106,6 +148,18 @@ namespace PokeAPIView
 			// Berries
 			BerryClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ベリー(Berry)", new BerryList(), typeof(Window)));
 			BerryFirmnessClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ベリーの固さ(Berry Firmness)", new BerryFirmnessList(), typeof(Window)));
+			BerryFlavorClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ベリーの味(Berry Flavor)", new BerryFlavorList(), typeof(Window)));
+
+			// Contests
+			ContestTypeClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("コンテストタイプ(Contest Type)", new ContestTypeList(), typeof(Window)));
+
+			// Encounters
+			EncounterMethodClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("エンカウントの方法(Encounter Method)", new EncounterMethodList(), typeof(Window)));
+			EncounterConditionClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("エンカウント条件(Encounter Condition)", new EncounterConditionList(), typeof(Window)));
+			EncounterConditionValueClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("エンカウント条件値(Encounter Condition Value)", new EncounterConditionValueList(), typeof(Window)));
+
+			// Evolution
+			EvolutionTriggerClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("進化トリガー(Evolution Trigger)", new EvolutionTriggerList(), typeof(Window)));
 
 			// Games
 			GenerationClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("世代(Generation)", new GenerationList(), typeof(Window)));

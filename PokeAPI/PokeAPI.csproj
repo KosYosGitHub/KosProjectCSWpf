@@ -61,7 +61,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Berries\BerryFirmness\BerryFirmnessList.cs" />
+    <Compile Include="Berries\BerryFlavor\BerryFlavorList.cs" />
     <Compile Include="Berries\Berry\BerryList.cs" />
+    <Compile Include="Contests\ContestType\ContestTypeList.cs" />
+    <Compile Include="Encounters\EncounterConditionValue\EncounterConditionValueList.cs" />
+    <Compile Include="Encounters\EncounterCondition\EncounterConditionList.cs" />
+    <Compile Include="Encounters\EncounterMethod\EncounterMethodList.cs" />
+    <Compile Include="Evolution\EvolutionTrigger\EvolutionTriggerList.cs" />
     <Compile Include="Games\Generation\GenerationList.cs" />
     <Compile Include="Games\Pokedexes\PokedexList.cs" />
     <Compile Include="Games\VersionGroup\VersionGroupList.cs" />
