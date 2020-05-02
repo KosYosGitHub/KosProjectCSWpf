@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace PokeAPI
 {
@@ -171,6 +167,34 @@ namespace PokeAPI
 		/// パルパークエンカウントエリアリスト
 		/// </summary>
 		internal List<PalParkEncounterArea> PalParkEncounters { get; } = new List<PalParkEncounterArea>();
+		#endregion
+
+		#region フレーバーテキストリスト
+		/// <summary>
+		/// フレーバーテキストリスト
+		/// </summary>
+		internal List<FlavorText> FlavorTextEntries { get; } = new List<FlavorText>();
+		#endregion
+
+		#region フォルム説明リスト
+		/// <summary>
+		/// フォルム説明リスト
+		/// </summary>
+		internal List<Description> FormDescriptions { get; } = new List<Description>();
+		#endregion
+
+		#region 性格リスト
+		/// <summary>
+		/// 性格リスト
+		/// </summary>
+		internal List<Genus> Genus { get; } = new List<Genus>();
+		#endregion
+
+		#region バリエーションリスト
+		/// <summary>
+		/// バリエーションリスト
+		/// </summary>
+		internal List<PokemonSpeciesVariety> Varieties { get; } = new List<PokemonSpeciesVariety>();
 		#endregion
 	}
 }

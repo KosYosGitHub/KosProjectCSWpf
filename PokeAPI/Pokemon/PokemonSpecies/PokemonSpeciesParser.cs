@@ -17,16 +17,16 @@ namespace PokeAPI
 		/// </summary>
 		/// <param name="token">genusトークン</param>
 		/// <param name="genusModels">取得先Genusリスト</param>
-		internal void ParseGenusList(JToken token, List<GenusModel> genusModels)
+		internal void ParseGenusList(JToken token, List<Genus> genusModels)
 		{
 			JArray datas = token as JArray;
 			NamedAPIResourceParser parser = new NamedAPIResourceParser();
 
 			foreach(JObject data in datas) {
-				GenusModel genus = new GenusModel();
-				genus.Genus = (data["genus"] as JValue).ToString();
-				parser.ParseNamedAPIResource(data["language"], genus.Language);
-				genus.IsGeted = true;
+				Genus genus = new Genus {
+					Name = (data["genus"] as JValue).ToString()
+				};
+				parser.ParseNamedAPIResource(data["language"], genus.Language.Model);
 				genusModels.Add(genus);
 			}
 		}
@@ -44,8 +44,9 @@ namespace PokeAPI
 			NamedAPIResourceParser parser = new NamedAPIResourceParser();
 
 			foreach(JObject data in datas) {
-				PokemonSpeciesDexEntry dexEntry = new PokemonSpeciesDexEntry();
-				dexEntry.EntryNumber = (int)data["entry_number"];
+				PokemonSpeciesDexEntry dexEntry = new PokemonSpeciesDexEntry {
+					EntryNumber = (int)data["entry_number"]
+				};
 				parser.ParseNamedAPIResource(data["pokedex"], dexEntry.Pokedex.Model);
 				dexEntries.Add(dexEntry);
 			}

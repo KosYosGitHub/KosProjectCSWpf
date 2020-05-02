@@ -240,5 +240,33 @@ namespace PokeAPI
 		/// </summary>
 		public List<PalParkEncounterArea> PalParkEncounters => Model.PalParkEncounters;
 		#endregion
+
+		#region フレーバーテキストリスト
+		/// <summary>
+		/// フレーバーテキストリスト
+		/// </summary>
+		public List<FlavorText> FlavorTextEntries => Model.FlavorTextEntries;
+		#endregion
+
+		#region フォルム説明リスト
+		/// <summary>
+		/// フォルム説明リスト
+		/// </summary>
+		public List<Description> FormDescriptions => Model.FormDescriptions;
+		#endregion
+
+		#region 属性リスト
+		/// <summary>
+		/// 属性リスト
+		/// </summary>
+		public List<Genus> Genus => Model.Genus;
+		#endregion
+
+		#region バリエーションリスト
+		/// <summary>
+		/// バリエーションリスト
+		/// </summary>
+		public List<PokemonSpeciesVariety> Varieties => Model.Varieties;
+		#endregion
 	}
 }

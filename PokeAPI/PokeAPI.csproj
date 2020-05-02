@@ -99,6 +99,7 @@
     <Compile Include="Pokemon\PokemonForm\PokemonFormList.cs" />
     <Compile Include="Pokemon\PokemonHabitat\PokemonHabitatList.cs" />
     <Compile Include="Pokemon\PokemonShape\PokemonShapeList.cs" />
+    <Compile Include="Pokemon\PokemonSpecies\Genus.cs" />
     <Compile Include="Pokemon\PokemonSpecies\GenusModel.cs" />
     <Compile Include="Pokemon\PokemonSpecies\PalParkEncounterArea.cs" />
     <Compile Include="Pokemon\PokemonSpecies\PalParkEncounterAreaModel.cs" />
@@ -108,11 +109,17 @@
     <Compile Include="Pokemon\PokemonSpecies\PokemonSpeciesList.cs" />
     <Compile Include="Pokemon\PokemonSpecies\PokemonSpeciesModel.cs" />
     <Compile Include="Pokemon\PokemonSpecies\PokemonSpeciesParser.cs" />
+    <Compile Include="Pokemon\PokemonSpecies\PokemonSpeciesVariety.cs" />
+    <Compile Include="Pokemon\PokemonSpecies\PokemonSpeciesVarietyModel.cs" />
     <Compile Include="Pokemon\Pokemon\PokemonList.cs" />
     <Compile Include="Pokemon\Stat\StatList.cs" />
     <Compile Include="Pokemon\Type\TypeList.cs" />
     <Compile Include="Utility\CommonModels\APIResource\APIResource.cs" />
     <Compile Include="Utility\CommonModels\APIResource\APIResourceModel.cs" />
+    <Compile Include="Utility\CommonModels\Description\Description.cs" />
+    <Compile Include="Utility\CommonModels\Description\DescriptionModel.cs" />
+    <Compile Include="Utility\CommonModels\FlavorText\FlavorText.cs" />
+    <Compile Include="Utility\CommonModels\FlavorText\FlavorTextModel.cs" />
     <Compile Include="Utility\CommonModels\NamedAPIResource\NamedAPIResource.cs" />
     <Compile Include="Utility\CommonModels\NamedAPIResource\NamedAPIResourceList.cs" />
     <Compile Include="Utility\CommonModels\NamedAPIResource\NamedAPIResourceParser.cs" />

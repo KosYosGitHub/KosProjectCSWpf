@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-
-namespace PokeAPI
+﻿namespace PokeAPI
 {
 	/// <summary>
 	/// 属性モデル
@@ -20,7 +18,7 @@ namespace PokeAPI
 		/// <summary>
 		/// 言語情報
 		/// </summary>
-		internal NamedAPIResourceModel Language { get; } = new NamedAPIResourceModel();
+		internal NamedAPIResource Language { get; } = new NamedAPIResource();
 		#endregion
 
 		#region 取得済フラグ
