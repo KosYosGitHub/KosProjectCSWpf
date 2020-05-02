@@ -25,7 +25,7 @@
 		/// <summary>
 		/// エリア
 		/// </summary>
-		internal NamedAPIResource Area { get; } = new NamedAPIResource();
+		internal NamedAPIResourceViewModel Area { get; } = new NamedAPIResourceViewModel();
 		#endregion
 	}
 }

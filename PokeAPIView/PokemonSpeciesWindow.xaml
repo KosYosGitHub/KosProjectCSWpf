@@ -10,7 +10,7 @@
 	Loaded="Window_Loaded">
 
 	<Window.DataContext>
-		<poke:PokemonSpecies x:Name="viewModel"/>
+		<poke:PokemonSpeciesViewModel x:Name="viewModel"/>
 	</Window.DataContext>
 	
     <Grid Margin="10">
@@ -322,7 +322,7 @@
 							SelectionMode="Single"
 							AutoGenerateColumns="False">
 							<DataGrid.Columns>
-								<DataGridTextColumn Header="flavor_text" Binding="{Binding Text}"/>
+								<DataGridTextColumn Header="flavor_text" Binding="{Binding FlavorText}"/>
 								<DataGridTextColumn Header="language" Binding="{Binding Language.Name}"/>
 								<DataGridTextColumn Header="version" Binding="{Binding Version.Name}"/>
 							</DataGrid.Columns>
@@ -353,7 +353,7 @@
 							SelectionMode="Single"
 							AutoGenerateColumns="False">
 							<DataGrid.Columns>
-								<DataGridTextColumn Header="form_description" Binding="{Binding Text}"/>
+								<DataGridTextColumn Header="form_description" Binding="{Binding Description}"/>
 								<DataGridTextColumn Header="language" Binding="{Binding Language.Name}"/>
 							</DataGrid.Columns>
 						</DataGrid>
@@ -373,14 +373,14 @@
 					<StackPanel Grid.Column="1" Orientation="Horizontal">
 						<DataGrid
 							x:Name="generaGrid"
-							ItemsSource="{Binding Genus}"
+							ItemsSource="{Binding Genera}"
 							HeadersVisibility="Column"
 							MaxHeight="500"
 							ColumnHeaderHeight="24"
 							SelectionMode="Single"
 							AutoGenerateColumns="False">
 							<DataGrid.Columns>
-								<DataGridTextColumn Header="genus" Binding="{Binding Name}"/>
+								<DataGridTextColumn Header="genus" Binding="{Binding Genus}"/>
 								<DataGridTextColumn Header="language" Binding="{Binding Language.Name}"/>
 							</DataGrid.Columns>
 						</DataGrid>

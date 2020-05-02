@@ -3,15 +3,15 @@
 namespace PokeAPI
 {
 	/// <summary>
-	/// 名前付きAPIリソース
+	/// 名前付きAPIリソースビューモデル
 	/// </summary>
-	public class NamedAPIResource : KosViewModel
+	public class NamedAPIResourceViewModel : KosViewModel
 	{
 		// internal プロパティ
 
-		#region 名前付きAPIリソース
+		#region 名前付きAPIリソースモデル
 		/// <summary>
-		/// 名前付きAPIリソース
+		/// 名前付きAPIリソースモデル
 		/// </summary>
 		internal NamedAPIResourceModel Model { get; } = new NamedAPIResourceModel();
 		#endregion

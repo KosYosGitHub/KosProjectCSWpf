@@ -70,7 +70,7 @@ namespace PokeAPIView
 		/// <summary>
 		/// 選択中オブジェクト
 		/// </summary>
-		private NamedAPIResource Selected { get; set; }
+		private NamedAPIResourceViewModel Selected { get; set; }
 		#endregion
 
 		// イベントハンドラ
@@ -101,7 +101,7 @@ namespace PokeAPIView
 		private void SelectedChanged(DataGrid dataGrid)
 		{
 			if(dataGrid.IsLoaded) {
-				Selected = (dataGrid.SelectedItem as NamedAPIResource);
+				Selected = (dataGrid.SelectedItem as NamedAPIResourceViewModel);
 			}
 		}
 		#endregion

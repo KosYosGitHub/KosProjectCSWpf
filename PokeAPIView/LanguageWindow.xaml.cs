@@ -69,7 +69,7 @@ namespace PokeAPIView
 		/// <param name="e"></param>
 		private void NamesDetailButton_Click(object sender, RoutedEventArgs e)
 		{
-			if(namesGrid.SelectedItem is Name name) {
+			if(namesGrid.SelectedItem is NameViewModel name) {
 				LanguageWindow window = new LanguageWindow(name.LanguageURL) {
 					Owner = this
 				};

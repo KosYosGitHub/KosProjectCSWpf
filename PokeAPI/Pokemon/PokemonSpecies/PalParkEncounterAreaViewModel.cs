@@ -5,7 +5,7 @@ namespace PokeAPI
 	/// <summary>
 	/// パルパークエンカウントエリアビューモデル
 	/// </summary>
-	public class PalParkEncounterArea : KosViewModel
+	public class PalParkEncounterAreaViewModel : KosViewModel
 	{
 		// internal プロパティ
 
@@ -50,7 +50,7 @@ namespace PokeAPI
 		/// <summary>
 		/// エリア
 		/// </summary>
-		public NamedAPIResource Area => Model.Area;
+		public NamedAPIResourceViewModel Area => Model.Area;
 		#endregion
 	}
 }

@@ -7,7 +7,7 @@ namespace PokeAPI
 	/// <summary>
 	/// 言語ビューモデル
 	/// </summary>
-	public class Language : KosViewModel
+	public class LanguageViewModel : KosViewModel
 	{
 		// メンバ変数
 
@@ -103,7 +103,7 @@ namespace PokeAPI
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public Language()
+		public LanguageViewModel()
 		{
 			Names = new ListCollectionView(model.Names);
 		}

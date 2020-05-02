@@ -5,7 +5,7 @@ namespace PokeAPI
 	/// <summary>
 	/// ポケモン種族図鑑登録情報ビューモデル
 	/// </summary>
-	public class PokemonSpeciesDexEntry : KosViewModel
+	public class PokemonSpeciesDexEntryViewModel : KosViewModel
 	{
 		// private プロパティ
 
@@ -36,7 +36,7 @@ namespace PokeAPI
 		/// <summary>
 		/// ポケモン図鑑
 		/// </summary>
-		public NamedAPIResource Pokedex => Model.Pokedex;
+		public NamedAPIResourceViewModel Pokedex => Model.Pokedex;
 		#endregion
 	}
 }

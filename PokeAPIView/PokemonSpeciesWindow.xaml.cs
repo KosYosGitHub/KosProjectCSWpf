@@ -96,7 +96,7 @@ namespace PokeAPIView
 		/// <param name="e"></param>
 		private void NamesGridLanguageDetail_Click(object sender, RoutedEventArgs e)
 		{
-			if(namesGrid.SelectedItem is Name name) {
+			if(namesGrid.SelectedItem is NameViewModel name) {
 				_ = LanguageWindow.Show(name.LanguageURL, this);
 			}
 		}
@@ -110,7 +110,7 @@ namespace PokeAPIView
 		/// <param name="e"></param>
 		private void FlavorTextLanguageDetail_Click(object sender, RoutedEventArgs e)
 		{
-			if(flavorTextEntriesGrid.SelectedItem is FlavorText flavorText) {
+			if(flavorTextEntriesGrid.SelectedItem is FlavorTextViewModel flavorText) {
 				_ = LanguageWindow.Show(flavorText.Language.URL, this);
 			}
 		}
@@ -124,7 +124,7 @@ namespace PokeAPIView
 		/// <param name="e"></param>
 		private void FormDescriptionsGridLanguageDetail_Click(object sender, RoutedEventArgs e)
 		{
-			if(formDescriptionGrid.SelectedItem is Description item) {
+			if(formDescriptionGrid.SelectedItem is DescriptionViewModel item) {
 				_ = LanguageWindow.Show(item.Language.URL, this);
 			}
 		}
@@ -138,7 +138,7 @@ namespace PokeAPIView
 		/// <param name="e"></param>
 		private void GeneraGridLanguageDetail_Click(object sender, RoutedEventArgs e)
 		{
-			if(generaGrid.SelectedItem is Genus genus) {
+			if(generaGrid.SelectedItem is GenusViewModel genus) {
 				_ = LanguageWindow.Show(genus.Language.URL, this);
 			}
 		}

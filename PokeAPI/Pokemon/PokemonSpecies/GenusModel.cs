@@ -18,7 +18,7 @@
 		/// <summary>
 		/// 言語情報
 		/// </summary>
-		internal NamedAPIResource Language { get; } = new NamedAPIResource();
+		internal NamedAPIResourceViewModel Language { get; } = new NamedAPIResourceViewModel();
 		#endregion
 
 		#region 取得済フラグ

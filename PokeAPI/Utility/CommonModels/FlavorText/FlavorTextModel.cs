@@ -18,14 +18,14 @@
 		/// <summary>
 		/// 言語
 		/// </summary>
-		internal NamedAPIResource Language { get; } = new NamedAPIResource();
+		internal NamedAPIResourceViewModel Language { get; } = new NamedAPIResourceViewModel();
 		#endregion
 
 		#region バージョン
 		/// <summary>
 		/// バージョン
 		/// </summary>
-		internal NamedAPIResource Version { get; } = new NamedAPIResource();
+		internal NamedAPIResourceViewModel Version { get; } = new NamedAPIResourceViewModel();
 		#endregion
 	}
 }

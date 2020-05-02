@@ -36,7 +36,7 @@ namespace PokeAPI
 
 			// 要素の解析
 			foreach(JObject result in results) {
-				NamedAPIResource res = new NamedAPIResource {
+				NamedAPIResourceViewModel res = new NamedAPIResourceViewModel {
 					Name = (result["name"] as JValue).ToString(),
 					URL = (result["url"] as JValue).ToString()
 				};
@@ -57,12 +57,12 @@ namespace PokeAPI
 		/// </summary>
 		/// <param name="token">JSONトークン</param>
 		/// <param name="list">取得先の名前付きAPIリソースリスト</param>
-		internal void ParseNamedAPIResourceList(JToken token, ObservableCollection<NamedAPIResource> list)
+		internal void ParseNamedAPIResourceList(JToken token, ObservableCollection<NamedAPIResourceViewModel> list)
 		{
 			JArray datas = token as JArray;
 
 			foreach(JObject data in datas) {
-				NamedAPIResource res = new NamedAPIResource() {
+				NamedAPIResourceViewModel res = new NamedAPIResourceViewModel() {
 					Name = (data["name"] as JValue).ToString(),
 					URL = (data["url"] as JValue).ToString()
 				};

@@ -3,30 +3,30 @@
 namespace PokeAPI
 {
 	/// <summary>
-	/// 説明ビューモデル
+	/// 属性ビューモデル
 	/// </summary>
-	public class Description : KosViewModel
+	public class GenusViewModel : KosViewModel
 	{
 		// internal プロパティ
 
-		#region 説明モデル
+		#region 属性モデル
 		/// <summary>
-		/// 説明モデル
+		/// 属性モデル
 		/// </summary>
-		internal DescriptionModel Model { get; } = new DescriptionModel();
+		internal GenusModel Model { get; } = new GenusModel();
 		#endregion
 
 		// public プロパティ
 
-		#region 説明
+		#region 属性
 		/// <summary>
-		/// 説明
+		/// 属性
 		/// </summary>
-		public string Text
+		public string Genus
 		{
-			get => Model.Description;
+			get => Model.Genus;
 			set {
-				Model.Description = value;
+				Model.Genus = value;
 				RaisePropertyChanged();
 			}
 		}
@@ -36,7 +36,7 @@ namespace PokeAPI
 		/// <summary>
 		/// 言語
 		/// </summary>
-		public NamedAPIResource Language => Model.Language;
+		public NamedAPIResourceViewModel Language => Model.Language;
 		#endregion
 	}
 }

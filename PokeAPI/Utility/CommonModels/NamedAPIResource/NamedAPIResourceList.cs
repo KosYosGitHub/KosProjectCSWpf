@@ -24,7 +24,7 @@ namespace PokeAPI
 		/// <summary>
 		/// 名前付きAPIリソースのコレクション
 		/// </summary>
-		private ObservableCollection<NamedAPIResource> namedAPIResources = new ObservableCollection<NamedAPIResource>();
+		private ObservableCollection<NamedAPIResourceViewModel> namedAPIResources = new ObservableCollection<NamedAPIResourceViewModel>();
 		#endregion
 
 		#region ListCollectionView
@@ -54,7 +54,7 @@ namespace PokeAPI
 		/// <summary>
 		/// 名前付きAPIリソースのコレクション
 		/// </summary>
-		protected internal ObservableCollection<NamedAPIResource> NamedAPIResources => namedAPIResources;
+		protected internal ObservableCollection<NamedAPIResourceViewModel> NamedAPIResources => namedAPIResources;
 		#endregion
 
 		#region 名前付きAPIリソースのListCollectionView

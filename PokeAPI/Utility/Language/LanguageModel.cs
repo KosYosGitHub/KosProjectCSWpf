@@ -49,7 +49,7 @@ namespace PokeAPI
 		/// <summary>
 		/// 名称リスト
 		/// </summary>
-		internal ObservableCollection<Name> Names { get; } = new ObservableCollection<Name>();
+		internal ObservableCollection<NameViewModel> Names { get; } = new ObservableCollection<NameViewModel>();
 		#endregion
 
 		#region 取得済フラグ

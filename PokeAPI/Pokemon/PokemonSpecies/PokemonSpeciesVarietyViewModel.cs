@@ -5,7 +5,7 @@ namespace PokeAPI
 	/// <summary>
 	/// ポケモン種族バリエーションビューモデル
 	/// </summary>
-	public class PokemonSpeciesVariety : KosViewModel
+	public class PokemonSpeciesVarietyViewModel : KosViewModel
 	{
 		// internal プロパティ
 
@@ -36,7 +36,7 @@ namespace PokeAPI
 		/// <summary>
 		/// ポケモン
 		/// </summary>
-		public NamedAPIResource Pokemon => Model.Pokemon;
+		public NamedAPIResourceViewModel Pokemon => Model.Pokemon;
 		#endregion
 	}
 }

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using KosMVVM;
+﻿using KosMVVM;
 
 namespace PokeAPI
 {
-	public class Name : KosViewModel
+	public class NameViewModel : KosViewModel
 	{
 		// メンバ変数
 

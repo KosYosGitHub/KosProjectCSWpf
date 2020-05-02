@@ -18,7 +18,7 @@
 		/// <summary>
 		/// ポケモン図鑑
 		/// </summary>
-		internal NamedAPIResource Pokedex { get; } = new NamedAPIResource();
+		internal NamedAPIResourceViewModel Pokedex { get; } = new NamedAPIResourceViewModel();
 		#endregion
 
 		#region 取得済フラグ

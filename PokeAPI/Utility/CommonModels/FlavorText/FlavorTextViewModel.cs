@@ -5,7 +5,7 @@ namespace PokeAPI
 	/// <summary>
 	/// フレーバーテキストビューモデル
 	/// </summary>
-	public class FlavorText : KosViewModel
+	public class FlavorTextViewModel : KosViewModel
 	{
 		// internal プロパティ
 
@@ -22,7 +22,7 @@ namespace PokeAPI
 		/// <summary>
 		/// フレーバーテキスト
 		/// </summary>
-		public string Text
+		public string FlavorText
 		{
 			get => Model.FlavorText;
 			set {
@@ -36,14 +36,14 @@ namespace PokeAPI
 		/// <summary>
 		/// 言語
 		/// </summary>
-		public NamedAPIResource Language => Model.Language;
+		public NamedAPIResourceViewModel Language => Model.Language;
 		#endregion
 
 		#region バージョン
 		/// <summary>
 		/// バージョン
 		/// </summary>
-		public NamedAPIResource Version => Model.Version;
+		public NamedAPIResourceViewModel Version => Model.Version;
 		#endregion
 	}
 }

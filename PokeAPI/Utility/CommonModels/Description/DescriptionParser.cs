@@ -11,7 +11,7 @@ namespace PokeAPI
 		/// </summary>
 		/// <param name="token">JSONトークン</param>
 		/// <param name="list">取得先の説明リスト</param>
-		internal void ParseDescriptionList(JToken token, ObservableCollection<Description> list)
+		internal void ParseDescriptionList(JToken token, ObservableCollection<DescriptionViewModel> list)
 		{
 			if(!token.HasValues) {
 				return;
@@ -21,8 +21,8 @@ namespace PokeAPI
 			NamedAPIResourceParser namedAPIResourceParser = new NamedAPIResourceParser();
 
 			foreach(JObject data in datas) {
-				Description item = new Description {
-					Text = (data["description"] as JValue).ToString()
+				DescriptionViewModel item = new DescriptionViewModel {
+					Description = (data["description"] as JValue).ToString()
 				};
 				namedAPIResourceParser.ParseNamedAPIResource(data["language"], item.Language.Model);
 				list.Add(item);

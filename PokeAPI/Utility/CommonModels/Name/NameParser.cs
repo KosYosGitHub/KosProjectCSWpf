@@ -15,7 +15,7 @@ namespace PokeAPI
 		/// <param name="token">JSONトークン</param>
 		/// <param name="name">要素名</param>
 		/// <param name="names">取得先名称リスト</param>
-		internal void ParseNameList(JToken token, string name, ObservableCollection<Name> names)
+		internal void ParseNameList(JToken token, string name, ObservableCollection<NameViewModel> names)
 		{
 			JArray fields = token[name] as JArray;
 			if(fields == null) {
@@ -24,7 +24,7 @@ namespace PokeAPI
 
 			NamedAPIResourceParser parser = new NamedAPIResourceParser();
 			foreach(JObject field in fields) {
-				Name data = new Name();
+				NameViewModel data = new NameViewModel();
 
 				data.NameText = (field["name"] as JValue).ToString();
 				parser.ParseNamedAPIResource(field["language"], data.Language);

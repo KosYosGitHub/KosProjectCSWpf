@@ -18,7 +18,7 @@
 		/// <summary>
 		/// ポケモン
 		/// </summary>
-		internal NamedAPIResource Pokemon { get; } = new NamedAPIResource();
+		internal NamedAPIResourceViewModel Pokemon { get; } = new NamedAPIResourceViewModel();
 		#endregion
 	}
 }

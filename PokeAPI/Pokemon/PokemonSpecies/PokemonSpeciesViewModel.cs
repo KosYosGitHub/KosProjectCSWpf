@@ -7,7 +7,7 @@ namespace PokeAPI
 	/// <summary>
 	/// ポケモン種族ビューモデル
 	/// </summary>
-	public class PokemonSpecies : KosViewModel
+	public class PokemonSpeciesViewModel : KosViewModel
 	{
 		// private プロパティ
 
@@ -164,7 +164,7 @@ namespace PokeAPI
 		/// <summary>
 		/// 成長レート
 		/// </summary>
-		public NamedAPIResource GrowthRate => Model.GrowthRate;
+		public NamedAPIResourceViewModel GrowthRate => Model.GrowthRate;
 		#endregion
 
 		#region ポケモン図鑑番号リスト
@@ -185,42 +185,42 @@ namespace PokeAPI
 		/// <summary>
 		/// 色
 		/// </summary>
-		public NamedAPIResource Color => Model.Color;
+		public NamedAPIResourceViewModel Color => Model.Color;
 		#endregion
 
 		#region 形
 		/// <summary>
 		/// 形
 		/// </summary>
-		public NamedAPIResource Shape => Model.Shape;
+		public NamedAPIResourceViewModel Shape => Model.Shape;
 		#endregion
 
 		#region 進化元ポケモン種族
 		/// <summary>
 		/// 進化元ポケモン種族
 		/// </summary>
-		public NamedAPIResource EvolvesFromSpecies => Model.EvolvesFromSpecies;
+		public NamedAPIResourceViewModel EvolvesFromSpecies => Model.EvolvesFromSpecies;
 		#endregion
 
 		#region 進化ルート
 		/// <summary>
 		/// 進化ルート
 		/// </summary>
-		public APIResource EvolutionChain => Model.EvolutionChain;
+		public APIResourceViewModel EvolutionChain => Model.EvolutionChain;
 		#endregion
 
 		#region 生息地
 		/// <summary>
 		/// 生息地
 		/// </summary>
-		public NamedAPIResource Habitat => Model.Habitat;
+		public NamedAPIResourceViewModel Habitat => Model.Habitat;
 		#endregion
 
 		#region 世代
 		/// <summary>
 		/// 世代
 		/// </summary>
-		public NamedAPIResource Generation => Model.Generation;
+		public NamedAPIResourceViewModel Generation => Model.Generation;
 		#endregion
 
 		#region 名称リスト
@@ -255,7 +255,7 @@ namespace PokeAPI
 		/// <summary>
 		/// 属性リスト
 		/// </summary>
-		public ListCollectionView Genus { get; }
+		public ListCollectionView Genera { get; }
 		#endregion
 
 		#region バリエーションリスト
@@ -271,7 +271,7 @@ namespace PokeAPI
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public PokemonSpecies()
+		public PokemonSpeciesViewModel()
 		{
 			PokedexNumbers = new ListCollectionView(Model.PokedexNumbers);
 			EggGroups = new ListCollectionView(Model.EggGroups);
@@ -279,7 +279,7 @@ namespace PokeAPI
 			PalParkEncounters = new ListCollectionView(Model.PalParkEncounters);
 			FlavorTextEntries = new ListCollectionView(Model.FlavorTextEntries);
 			FormDescriptions = new ListCollectionView(Model.FormDescriptions);
-			Genus = new ListCollectionView(Model.Genus);
+			Genera = new ListCollectionView(Model.Genus);
 			Varieties = new ListCollectionView(Model.Varieties);
 		}
 		#endregion
@@ -326,7 +326,7 @@ namespace PokeAPI
 			RaisePropertyChanged(nameof(PalParkEncounters));
 			RaisePropertyChanged(nameof(FlavorTextEntries));
 			RaisePropertyChanged(nameof(FormDescriptions));
-			RaisePropertyChanged(nameof(Genus));
+			RaisePropertyChanged(nameof(Genera));
 			RaisePropertyChanged(nameof(Varieties));
 		}
 		#endregion

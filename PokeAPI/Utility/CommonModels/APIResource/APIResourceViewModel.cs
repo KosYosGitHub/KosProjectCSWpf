@@ -5,7 +5,7 @@ namespace PokeAPI
 	/// <summary>
 	///  APIリソースjビューモデル
 	/// </summary>
-	public class APIResource : KosViewModel
+	public class APIResourceViewModel : KosViewModel
 	{
 		// internal プロパティ
 

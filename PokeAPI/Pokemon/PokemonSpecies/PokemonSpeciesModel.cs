@@ -98,105 +98,105 @@ namespace PokeAPI
 		/// <summary>
 		/// 成長レート
 		/// </summary>
-		internal NamedAPIResource GrowthRate { get; set; } = new NamedAPIResource();
+		internal NamedAPIResourceViewModel GrowthRate { get; set; } = new NamedAPIResourceViewModel();
 		#endregion
 
 		#region ポケモン図鑑番号リスト
 		/// <summary>
 		/// ポケモン図鑑番号リスト
 		/// </summary>
-		internal ObservableCollection<PokemonSpeciesDexEntry> PokedexNumbers { get; } = new ObservableCollection<PokemonSpeciesDexEntry>();
+		internal ObservableCollection<PokemonSpeciesDexEntryViewModel> PokedexNumbers { get; } = new ObservableCollection<PokemonSpeciesDexEntryViewModel>();
 		#endregion
 
 		#region 卵グループリスト
 		/// <summary>
 		/// 卵グループリスト
 		/// </summary>
-		internal ObservableCollection<NamedAPIResource> EggGroups { get; } = new ObservableCollection<NamedAPIResource>();
+		internal ObservableCollection<NamedAPIResourceViewModel> EggGroups { get; } = new ObservableCollection<NamedAPIResourceViewModel>();
 		#endregion
 
 		#region 色
 		/// <summary>
 		/// 色
 		/// </summary>
-		internal NamedAPIResource Color { get; } = new NamedAPIResource();
+		internal NamedAPIResourceViewModel Color { get; } = new NamedAPIResourceViewModel();
 		#endregion
 
 		#region 形
 		/// <summary>
 		/// 形
 		/// </summary>
-		internal NamedAPIResource Shape { get; } = new NamedAPIResource();
+		internal NamedAPIResourceViewModel Shape { get; } = new NamedAPIResourceViewModel();
 		#endregion
 
 		#region 進化元ポケモン種族
 		/// <summary>
 		/// 進化元ポケモン種族
 		/// </summary>
-		internal NamedAPIResource EvolvesFromSpecies { get; } = new NamedAPIResource();
+		internal NamedAPIResourceViewModel EvolvesFromSpecies { get; } = new NamedAPIResourceViewModel();
 		#endregion
 
 		#region 進化ルート
 		/// <summary>
 		/// 進化ルート
 		/// </summary>
-		internal APIResource EvolutionChain { get; set; } = new APIResource();
+		internal APIResourceViewModel EvolutionChain { get; set; } = new APIResourceViewModel();
 		#endregion
 
 		#region 生息地
 		/// <summary>
 		/// 生息地
 		/// </summary>
-		internal NamedAPIResource Habitat { get; } = new NamedAPIResource();
+		internal NamedAPIResourceViewModel Habitat { get; } = new NamedAPIResourceViewModel();
 		#endregion
 
 		#region 世代
 		/// <summary>
 		/// 世代
 		/// </summary>
-		internal NamedAPIResource Generation { get; } = new NamedAPIResource();
+		internal NamedAPIResourceViewModel Generation { get; } = new NamedAPIResourceViewModel();
 		#endregion
 
 		#region 名称リスト
 		/// <summary>
 		/// 名称リスト
 		/// </summary>
-		internal ObservableCollection<Name> Names { get; } = new ObservableCollection<Name>();
+		internal ObservableCollection<NameViewModel> Names { get; } = new ObservableCollection<NameViewModel>();
 		#endregion
 
 		#region パルパークエンカウントエリアリスト
 		/// <summary>
 		/// パルパークエンカウントエリアリスト
 		/// </summary>
-		internal ObservableCollection<PalParkEncounterArea> PalParkEncounters { get; } = new ObservableCollection<PalParkEncounterArea>();
+		internal ObservableCollection<PalParkEncounterAreaViewModel> PalParkEncounters { get; } = new ObservableCollection<PalParkEncounterAreaViewModel>();
 		#endregion
 
 		#region フレーバーテキストリスト
 		/// <summary>
 		/// フレーバーテキストリスト
 		/// </summary>
-		internal ObservableCollection<FlavorText> FlavorTextEntries { get; } = new ObservableCollection<FlavorText>();
+		internal ObservableCollection<FlavorTextViewModel> FlavorTextEntries { get; } = new ObservableCollection<FlavorTextViewModel>();
 		#endregion
 
 		#region フォルム説明リスト
 		/// <summary>
 		/// フォルム説明リスト
 		/// </summary>
-		internal ObservableCollection<Description> FormDescriptions { get; } = new ObservableCollection<Description>();
+		internal ObservableCollection<DescriptionViewModel> FormDescriptions { get; } = new ObservableCollection<DescriptionViewModel>();
 		#endregion
 
 		#region 属性リスト
 		/// <summary>
 		/// 属性リスト
 		/// </summary>
-		internal ObservableCollection<Genus> Genus { get; } = new ObservableCollection<Genus>();
+		internal ObservableCollection<GenusViewModel> Genus { get; } = new ObservableCollection<GenusViewModel>();
 		#endregion
 
 		#region バリエーションリスト
 		/// <summary>
 		/// バリエーションリスト
 		/// </summary>
-		internal ObservableCollection<PokemonSpeciesVariety> Varieties { get; } = new ObservableCollection<PokemonSpeciesVariety>();
+		internal ObservableCollection<PokemonSpeciesVarietyViewModel> Varieties { get; } = new ObservableCollection<PokemonSpeciesVarietyViewModel>();
 		#endregion
 
 		#region 取得済フラグ
