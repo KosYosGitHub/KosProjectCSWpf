@@ -8,6 +8,24 @@ namespace PokeAPIView
 	/// </summary>
 	public partial class LanguageWindow : Window
 	{
+		// public static メソッド
+
+		#region LanguageWindowの表示
+		/// <summary>
+		/// LanguageWindowの表示
+		/// </summary>
+		/// <param name="url">URL</param>
+		/// <param name="owner">親ウィンドウ</param>
+		/// <returns>ShowDialogの結果</returns>
+		public static bool? Show(string url, Window owner)
+		{
+			LanguageWindow window = new LanguageWindow(url) {
+				Owner = owner
+			};
+			return window.ShowDialog();
+		}
+		#endregion
+
 		// プロパティ
 
 		#region 情報URL

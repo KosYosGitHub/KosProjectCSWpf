@@ -161,42 +161,42 @@ namespace PokeAPI
 		/// <summary>
 		/// 名称リスト
 		/// </summary>
-		internal List<Name> Names { get; } = new List<Name>();
+		internal ObservableCollection<Name> Names { get; } = new ObservableCollection<Name>();
 		#endregion
 
 		#region パルパークエンカウントエリアリスト
 		/// <summary>
 		/// パルパークエンカウントエリアリスト
 		/// </summary>
-		internal List<PalParkEncounterArea> PalParkEncounters { get; } = new List<PalParkEncounterArea>();
+		internal ObservableCollection<PalParkEncounterArea> PalParkEncounters { get; } = new ObservableCollection<PalParkEncounterArea>();
 		#endregion
 
 		#region フレーバーテキストリスト
 		/// <summary>
 		/// フレーバーテキストリスト
 		/// </summary>
-		internal List<FlavorText> FlavorTextEntries { get; } = new List<FlavorText>();
+		internal ObservableCollection<FlavorText> FlavorTextEntries { get; } = new ObservableCollection<FlavorText>();
 		#endregion
 
 		#region フォルム説明リスト
 		/// <summary>
 		/// フォルム説明リスト
 		/// </summary>
-		internal List<Description> FormDescriptions { get; } = new List<Description>();
+		internal ObservableCollection<Description> FormDescriptions { get; } = new ObservableCollection<Description>();
 		#endregion
 
-		#region 性格リスト
+		#region 属性リスト
 		/// <summary>
-		/// 性格リスト
+		/// 属性リスト
 		/// </summary>
-		internal List<Genus> Genus { get; } = new List<Genus>();
+		internal ObservableCollection<Genus> Genus { get; } = new ObservableCollection<Genus>();
 		#endregion
 
 		#region バリエーションリスト
 		/// <summary>
 		/// バリエーションリスト
 		/// </summary>
-		internal List<PokemonSpeciesVariety> Varieties { get; } = new List<PokemonSpeciesVariety>();
+		internal ObservableCollection<PokemonSpeciesVariety> Varieties { get; } = new ObservableCollection<PokemonSpeciesVariety>();
 		#endregion
 
 		#region 取得済フラグ
@@ -219,6 +219,9 @@ namespace PokeAPI
 			PokemonSpeciesParser pokemonSpeciesParser = new PokemonSpeciesParser();
 			NamedAPIResourceParser namedAPIResourceParser = new NamedAPIResourceParser();
 			APIResourceParser apiResourceParser = new APIResourceParser();
+			NameParser nameParser = new NameParser();
+			FlavorTextParser flavorTextParser = new FlavorTextParser();
+			DescriptionParser descriptionParser = new DescriptionParser();
 
 			ID = (int)obj["id"];
 			Name = (obj["name"] as JValue).ToString();
@@ -238,6 +241,12 @@ namespace PokeAPI
 			apiResourceParser.ParseAPIResource(obj["evolution_chain"], EvolutionChain.Model);
 			namedAPIResourceParser.ParseNamedAPIResource(obj["habitat"], Habitat.Model);
 			namedAPIResourceParser.ParseNamedAPIResource(obj["generation"], Generation.Model);
+			nameParser.ParseNameList(obj, "names", Names);
+			pokemonSpeciesParser.ParsePalParkEncounterAreaList(obj["pal_park_encounters"], PalParkEncounters);
+			flavorTextParser.ParseFlavorTextList(obj["flavor_text_entries"], FlavorTextEntries);
+			descriptionParser.ParseDescriptionList(obj["form_descriptions"], FormDescriptions);
+			pokemonSpeciesParser.ParseGenusList(obj["genera"], Genus);
+			pokemonSpeciesParser.ParsePokemonSpeciesVarietyList(obj["varieties"], Varieties);
 		}
 		#endregion
 	}

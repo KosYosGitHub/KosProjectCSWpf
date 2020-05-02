@@ -119,8 +119,10 @@
     <Compile Include="Utility\CommonModels\APIResource\APIResourceParser.cs" />
     <Compile Include="Utility\CommonModels\Description\Description.cs" />
     <Compile Include="Utility\CommonModels\Description\DescriptionModel.cs" />
+    <Compile Include="Utility\CommonModels\Description\DescriptionParser.cs" />
     <Compile Include="Utility\CommonModels\FlavorText\FlavorText.cs" />
     <Compile Include="Utility\CommonModels\FlavorText\FlavorTextModel.cs" />
+    <Compile Include="Utility\CommonModels\FlavorText\FlavorTextParser.cs" />
     <Compile Include="Utility\CommonModels\NamedAPIResource\NamedAPIResource.cs" />
     <Compile Include="Utility\CommonModels\NamedAPIResource\NamedAPIResourceList.cs" />
     <Compile Include="Utility\CommonModels\NamedAPIResource\NamedAPIResourceParser.cs" />

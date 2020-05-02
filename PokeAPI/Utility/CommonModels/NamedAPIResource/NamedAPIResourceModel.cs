@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PokeAPI
+﻿namespace PokeAPI
 {
-    /// <summary>
-    /// 名前付きAPIリソースモデル
-    /// </summary>
-    internal class NamedAPIResourceModel
+	/// <summary>
+	/// 名前付きAPIリソースモデル
+	/// </summary>
+	internal class NamedAPIResourceModel
 	{
 
 		// プロパティ

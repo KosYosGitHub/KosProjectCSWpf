@@ -3,7 +3,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:local="clr-namespace:PokeAPIView"
 	xmlns:poke="clr-namespace:PokeAPI;assembly=PokeAPI"
     mc:Ignorable="d"
     Title="PokemonSpeciesWindow" Height="800" Width="1280"
@@ -21,50 +20,11 @@
 			<RowDefinition Height="32"/>
 		</Grid.RowDefinitions>
 
-		<ScrollViewer Grid.Row="0">
-			<Grid>
-				<Grid.RowDefinitions>
-					<RowDefinition Height="32"/>
-					<RowDefinition Height="10"/>
-					<RowDefinition Height="32"/>
-					<RowDefinition Height="10"/>
-					<RowDefinition Height="32"/>
-					<RowDefinition Height="10"/>
-					<RowDefinition Height="32"/>
-					<RowDefinition Height="10"/>
-					<RowDefinition Height="32"/>
-					<RowDefinition Height="10"/>
-					<RowDefinition Height="32"/>
-					<RowDefinition Height="10"/>
-					<RowDefinition Height="32"/>
-					<RowDefinition Height="10"/>
-					<RowDefinition Height="32"/>
-					<RowDefinition Height="10"/>
-					<RowDefinition Height="32"/>
-					<RowDefinition Height="10"/>
-					<RowDefinition Height="32"/>
-					<RowDefinition Height="10"/>
-					<RowDefinition Height="Auto"/>
-					<RowDefinition Height="10"/>
-					<RowDefinition Height="Auto"/>
-					<RowDefinition Height="10"/>
-					<RowDefinition Height="32"/>
-					<RowDefinition Height="10"/>
-					<RowDefinition Height="32"/>
-					<RowDefinition Height="10"/>
-					<RowDefinition Height="32"/>
-					<RowDefinition Height="10"/>
-					<RowDefinition Height="32"/>
-					<RowDefinition Height="10"/>
-					<RowDefinition Height="32"/>
-					<RowDefinition Height="10"/>
-					<RowDefinition Height="32"/>
-					<RowDefinition Height="10"/>
-				</Grid.RowDefinitions>
-
-				<Grid Grid.Row="0">
+		<ScrollViewer Grid.Row="0" HorizontalScrollBarVisibility="Visible">
+			<StackPanel>
+				<Grid>
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="125"/>
+						<ColumnDefinition x:Name="leftColumn" Width="125"/>
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
 
@@ -72,9 +32,9 @@
 					<Label Grid.Column="1" Content="{Binding ID}" BorderBrush="Black" BorderThickness="1"/>
 				</Grid>
 
-				<Grid Grid.Row="2">
+				<Grid Margin="0,10,0,0">
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="125"/>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
 
@@ -82,9 +42,9 @@
 					<Label Grid.Column="1" Content="{Binding Name}" BorderBrush="Black" BorderThickness="1"/>
 				</Grid>
 
-				<Grid Grid.Row="4">
+				<Grid Margin="0,10,0,0">
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="125"/>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
 
@@ -92,9 +52,9 @@
 					<Label Grid.Column="1" Content="{Binding Order}" BorderBrush="Black" BorderThickness="1"/>
 				</Grid>
 
-				<Grid Grid.Row="6">
+				<Grid Margin="0,10,0,0">
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="125"/>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
 
@@ -102,9 +62,9 @@
 					<Label Grid.Column="1" Content="{Binding GenderRate}" BorderBrush="Black" BorderThickness="1"/>
 				</Grid>
 
-				<Grid Grid.Row="8">
+				<Grid Margin="0,10,0,0">
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="125"/>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
 
@@ -112,9 +72,9 @@
 					<Label Grid.Column="1" Content="{Binding CaptureRate}" BorderBrush="Black" BorderThickness="1"/>
 				</Grid>
 
-				<Grid Grid.Row="10">
+				<Grid Margin="0,10,0,0">
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="125"/>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
 
@@ -122,9 +82,9 @@
 					<Label Grid.Column="1" Content="{Binding BaseHappiness}" BorderBrush="Black" BorderThickness="1"/>
 				</Grid>
 
-				<Grid Grid.Row="12">
+				<Grid Margin="0,10,0,0">
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="125"/>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
 
@@ -132,9 +92,9 @@
 					<CheckBox Grid.Column="1" IsChecked="{Binding IsBaby}"/>
 				</Grid>
 
-				<Grid Grid.Row="14">
+				<Grid Margin="0,10,0,0">
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="125"/>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
 
@@ -142,9 +102,9 @@
 					<Label Grid.Column="1" Content="{Binding HatchCounter}" BorderBrush="Black" BorderThickness="1"/>
 				</Grid>
 
-				<Grid Grid.Row="16">
+				<Grid Margin="0,10,0,0">
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="125"/>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
 
@@ -152,9 +112,9 @@
 					<CheckBox Grid.Column="1" IsChecked="{Binding HasGenderDifferences}"/>
 				</Grid>
 
-				<Grid Grid.Row="18">
+				<Grid Margin="0,10,0,0">
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="125"/>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
 
@@ -165,9 +125,9 @@
 					</StackPanel>
 				</Grid>
 
-				<Grid Grid.Row="20">
+				<Grid Margin="0,10,0,0">
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="125"/>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
 
@@ -191,9 +151,9 @@
 					</StackPanel>
 				</Grid>
 
-				<Grid Grid.Row="22">
+				<Grid Margin="0,10,0,0">
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="125"/>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
 
@@ -216,9 +176,9 @@
 					</StackPanel>
 				</Grid>
 
-				<Grid Grid.Row="24">
+				<Grid Margin="0,10,0,0">
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="125"/>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
 
@@ -229,9 +189,9 @@
 					</StackPanel>
 				</Grid>
 
-				<Grid Grid.Row="26">
+				<Grid Margin="0,10,0,0">
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="125"/>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
 
@@ -242,22 +202,22 @@
 					</StackPanel>
 				</Grid>
 
-				<Grid Grid.Row="28">
+				<Grid Margin="0,10,0,0">
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="125"/>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
 
 					<TextBlock Grid.Column="0" Text="evolves_from_species" HorizontalAlignment="Right"/>
 					<StackPanel Grid.Column="1" Orientation="Horizontal">
 						<Label Content="{Binding EvolvesFromSpecies.Name}" BorderBrush="Black" BorderThickness="1"/>
-						<Button Content="詳細"/>
+						<Button Content="詳細" Click="EvolvesFromSpeciesDetail_Click"/>
 					</StackPanel>
 				</Grid>
 
-				<Grid Grid.Row="30">
+				<Grid Margin="0,10,0,0">
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="125"/>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
 
@@ -265,9 +225,9 @@
 					<Button Grid.Column="1" Content="詳細" HorizontalAlignment="Left"/>
 				</Grid>
 
-				<Grid Grid.Row="32">
+				<Grid Margin="0,10,0,0">
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="125"/>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
 
@@ -278,19 +238,184 @@
 					</StackPanel>
 				</Grid>
 
-				<Grid Grid.Row="34">
+				<Grid Margin="0,10,0,0">
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="125"/>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
 
 					<TextBlock Grid.Column="0" Text="generation" HorizontalAlignment="Right"/>
 					<StackPanel Grid.Column="1" Orientation="Horizontal">
-						<Label Content="{Binding Generation	.Name}" BorderBrush="Black" BorderThickness="1"/>
+						<Label Content="{Binding Generation.Name}" BorderBrush="Black" BorderThickness="1"/>
 						<Button Content="詳細"/>
 					</StackPanel>
 				</Grid>
-			</Grid>
+
+				<Grid Margin="0,10,0,0">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Column="0" Text="names" HorizontalAlignment="Right"/>
+
+					<StackPanel Grid.Column="1" Orientation="Horizontal">
+						<DataGrid
+							x:Name="namesGrid"
+							ItemsSource="{Binding Names}"
+							HeadersVisibility="Column"
+							ColumnHeaderHeight="24"
+							SelectionMode="Single"
+							AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="言語" Binding="{Binding LanguageName}"/>
+								<DataGridTextColumn Header="名称" Binding="{Binding NameText}"/>
+							</DataGrid.Columns>
+						</DataGrid>
+
+						<Button Content="詳細" VerticalAlignment="Bottom" Height="32" Click="NamesGridLanguageDetail_Click"/>
+					</StackPanel>
+				</Grid>
+
+				<Grid Margin="0,10,0,0">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Column="0" Text="pal_park_encounters" HorizontalAlignment="Right"/>
+
+					<StackPanel Grid.Column="1" Orientation="Horizontal">
+						<DataGrid
+							x:Name="palParkEncountersGrid"
+							ItemsSource="{Binding PalParkEncounters}"
+							HeadersVisibility="Column"
+							ColumnHeaderHeight="24"
+							SelectionMode="Single"
+							AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="base_score" Binding="{Binding BaseScore}"/>
+								<DataGridTextColumn Header="rate" Binding="{Binding Rate}"/>
+								<DataGridTextColumn Header="area" Binding="{Binding Area.Name}"/>
+							</DataGrid.Columns>
+						</DataGrid>
+
+						<Button Content="詳細" VerticalAlignment="Bottom" Height="32"/>
+					</StackPanel>
+				</Grid>
+
+				<Grid Margin="0,10,0,0">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Column="0" Text="flavor_text_entries" HorizontalAlignment="Right"/>
+
+					<StackPanel Grid.Column="1" Orientation="Horizontal">
+						<DataGrid
+							x:Name="flavorTextEntriesGrid"
+							ItemsSource="{Binding FlavorTextEntries}"
+							HeadersVisibility="Column"
+							MaxHeight="500"
+							ColumnHeaderHeight="24"
+							SelectionMode="Single"
+							AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="flavor_text" Binding="{Binding Text}"/>
+								<DataGridTextColumn Header="language" Binding="{Binding Language.Name}"/>
+								<DataGridTextColumn Header="version" Binding="{Binding Version.Name}"/>
+							</DataGrid.Columns>
+						</DataGrid>
+
+						<StackPanel VerticalAlignment="Bottom">
+							<Button Content="language 詳細" Height="32" Click="FlavorTextLanguageDetail_Click"/>
+							<Button Content="version 詳細" Height="32"/>
+						</StackPanel>
+					</StackPanel>
+				</Grid>
+
+				<Grid Margin="0,10,0,0">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Column="0" Text="form_descriptions" HorizontalAlignment="Right"/>
+
+					<StackPanel Grid.Column="1" Orientation="Horizontal">
+						<DataGrid
+							x:Name="formDescriptionGrid"
+							ItemsSource="{Binding FormDescriptions}"
+							HeadersVisibility="Column"
+							MaxHeight="500"
+							ColumnHeaderHeight="24"
+							SelectionMode="Single"
+							AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="form_description" Binding="{Binding Text}"/>
+								<DataGridTextColumn Header="language" Binding="{Binding Language.Name}"/>
+							</DataGrid.Columns>
+						</DataGrid>
+
+						<Button Content="詳細" VerticalAlignment="Bottom" Height="32" Click="FormDescriptionsGridLanguageDetail_Click"/>
+					</StackPanel>
+				</Grid>
+
+				<Grid Margin="0,10,0,0">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Column="0" Text="genera" HorizontalAlignment="Right"/>
+
+					<StackPanel Grid.Column="1" Orientation="Horizontal">
+						<DataGrid
+							x:Name="generaGrid"
+							ItemsSource="{Binding Genus}"
+							HeadersVisibility="Column"
+							MaxHeight="500"
+							ColumnHeaderHeight="24"
+							SelectionMode="Single"
+							AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="genus" Binding="{Binding Name}"/>
+								<DataGridTextColumn Header="language" Binding="{Binding Language.Name}"/>
+							</DataGrid.Columns>
+						</DataGrid>
+
+						<Button Content="詳細" VerticalAlignment="Bottom" Height="32" Click="GeneraGridLanguageDetail_Click"/>
+					</StackPanel>
+				</Grid>
+
+				<Grid Margin="0,10,0,0">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Column="0" Text="varieties" HorizontalAlignment="Right"/>
+
+					<StackPanel Grid.Column="1" Orientation="Horizontal">
+						<DataGrid
+							x:Name="varietiesGrid"
+							ItemsSource="{Binding Varieties}"
+							HeadersVisibility="Column"
+							MaxHeight="500"
+							ColumnHeaderHeight="24"
+							SelectionMode="Single"
+							AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridCheckBoxColumn Header="is_default" Binding="{Binding IsDefault}"/>
+								<DataGridTextColumn Header="pokemon" Binding="{Binding Pokemon.Name}"/>
+							</DataGrid.Columns>
+						</DataGrid>
+
+						<Button Content="詳細" VerticalAlignment="Bottom" Height="32"/>
+					</StackPanel>
+				</Grid>
+			</StackPanel>
 		</ScrollViewer>
 
 		<Grid Grid.Row="2">

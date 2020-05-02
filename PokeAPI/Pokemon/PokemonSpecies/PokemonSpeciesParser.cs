@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using Newtonsoft.Json.Linq;
 
 namespace PokeAPI
@@ -18,7 +13,7 @@ namespace PokeAPI
 		/// </summary>
 		/// <param name="token">genusトークン</param>
 		/// <param name="genusModels">取得先Genusリスト</param>
-		internal void ParseGenusList(JToken token, List<Genus> genusModels)
+		internal void ParseGenusList(JToken token, ObservableCollection<Genus> list)
 		{
 			JArray datas = token as JArray;
 			NamedAPIResourceParser parser = new NamedAPIResourceParser();
@@ -28,7 +23,7 @@ namespace PokeAPI
 					Name = (data["genus"] as JValue).ToString()
 				};
 				parser.ParseNamedAPIResource(data["language"], genus.Language.Model);
-				genusModels.Add(genus);
+				list.Add(genus);
 			}
 		}
 		#endregion
@@ -50,6 +45,49 @@ namespace PokeAPI
 				};
 				parser.ParseNamedAPIResource(data["pokedex"], dexEntry.Pokedex.Model);
 				dexEntries.Add(dexEntry);
+			}
+		}
+		#endregion
+
+		#region PalParkENcounterAreaの解析
+		/// <summary>
+		/// PalParkENcounterAreaの解析
+		/// </summary>
+		/// <param name="token">JSONトークン</param>
+		/// <param name="palParkEncounters">取得先PalParkEncounterAreaリスト</param>
+		internal void ParsePalParkEncounterAreaList(JToken token, ObservableCollection<PalParkEncounterArea> palParkEncounters)
+		{
+			JArray datas = token as JArray;
+			NamedAPIResourceParser parser = new NamedAPIResourceParser();
+
+			foreach(JObject data in datas) {
+				PalParkEncounterArea area = new PalParkEncounterArea {
+					BaseScore = (int)data["base_score"],
+					Rate = (int)data["rate"],
+				};
+				parser.ParseNamedAPIResource(data["area"], area.Area.Model);
+				palParkEncounters.Add(area);
+			}
+		}
+		#endregion
+
+		#region PokemonSpeciesVarietyの解析
+		/// <summary>
+		/// PokemonSpeciesVarietyの解析
+		/// </summary>
+		/// <param name="token">JSONトークン</param>
+		/// <param name="list">取得先リスト</param>
+		internal void ParsePokemonSpeciesVarietyList(JToken token, ObservableCollection<PokemonSpeciesVariety> list)
+		{
+			JArray datas = token as JArray;
+			NamedAPIResourceParser parser = new NamedAPIResourceParser();
+
+			foreach(JObject data in datas) {
+				PokemonSpeciesVariety item = new PokemonSpeciesVariety {
+					IsDefault = (bool)data["is_default"],
+				};
+				parser.ParseNamedAPIResource(data["pokemon"], item.Pokemon.Model);
+				list.Add(item);
 			}
 		}
 		#endregion

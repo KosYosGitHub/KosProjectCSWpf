@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Data;
+﻿using System.Windows.Data;
 using KosGeneric;
 using KosMVVM;
 
@@ -232,42 +227,42 @@ namespace PokeAPI
 		/// <summary>
 		/// 名称リスト
 		/// </summary>
-		public List<Name> Names => Model.Names;
+		public ListCollectionView Names { get; }
 		#endregion
 
 		#region パルパークエンカウントエリアリスト
 		/// <summary>
 		/// パルパークエンカウントエリアリスト
 		/// </summary>
-		public List<PalParkEncounterArea> PalParkEncounters => Model.PalParkEncounters;
+		public ListCollectionView PalParkEncounters { get; }
 		#endregion
 
 		#region フレーバーテキストリスト
 		/// <summary>
 		/// フレーバーテキストリスト
 		/// </summary>
-		public List<FlavorText> FlavorTextEntries => Model.FlavorTextEntries;
+		public ListCollectionView FlavorTextEntries { get; }
 		#endregion
 
 		#region フォルム説明リスト
 		/// <summary>
 		/// フォルム説明リスト
 		/// </summary>
-		public List<Description> FormDescriptions => Model.FormDescriptions;
+		public ListCollectionView FormDescriptions { get; }
 		#endregion
 
 		#region 属性リスト
 		/// <summary>
 		/// 属性リスト
 		/// </summary>
-		public List<Genus> Genus => Model.Genus;
+		public ListCollectionView Genus { get; }
 		#endregion
 
 		#region バリエーションリスト
 		/// <summary>
 		/// バリエーションリスト
 		/// </summary>
-		public List<PokemonSpeciesVariety> Varieties => Model.Varieties;
+		public ListCollectionView Varieties { get; }
 		#endregion
 
 		// イベントハンドラ
@@ -280,6 +275,12 @@ namespace PokeAPI
 		{
 			PokedexNumbers = new ListCollectionView(Model.PokedexNumbers);
 			EggGroups = new ListCollectionView(Model.EggGroups);
+			Names = new ListCollectionView(Model.Names);
+			PalParkEncounters = new ListCollectionView(Model.PalParkEncounters);
+			FlavorTextEntries = new ListCollectionView(Model.FlavorTextEntries);
+			FormDescriptions = new ListCollectionView(Model.FormDescriptions);
+			Genus = new ListCollectionView(Model.Genus);
+			Varieties = new ListCollectionView(Model.Varieties);
 		}
 		#endregion
 
@@ -321,6 +322,12 @@ namespace PokeAPI
 			RaisePropertyChanged(nameof(EvolvesFromSpecies));
 			RaisePropertyChanged(nameof(Habitat));
 			RaisePropertyChanged(nameof(Generation));
+			RaisePropertyChanged(nameof(Names));
+			RaisePropertyChanged(nameof(PalParkEncounters));
+			RaisePropertyChanged(nameof(FlavorTextEntries));
+			RaisePropertyChanged(nameof(FormDescriptions));
+			RaisePropertyChanged(nameof(Genus));
+			RaisePropertyChanged(nameof(Varieties));
 		}
 		#endregion
 	}
