@@ -100,6 +100,8 @@
     <Compile Include="Pokemon\PokemonHabitat\PokemonHabitatList.cs" />
     <Compile Include="Pokemon\PokemonShape\PokemonShapeList.cs" />
     <Compile Include="Pokemon\PokemonSpecies\GenusModel.cs" />
+    <Compile Include="Pokemon\PokemonSpecies\PalParkEncounterArea.cs" />
+    <Compile Include="Pokemon\PokemonSpecies\PalParkEncounterAreaModel.cs" />
     <Compile Include="Pokemon\PokemonSpecies\PokemonSpecies.cs" />
     <Compile Include="Pokemon\PokemonSpecies\PokemonSpeciesDexEntry.cs" />
     <Compile Include="Pokemon\PokemonSpecies\PokemonSpeciesDexEntryModel.cs" />
@@ -109,6 +111,8 @@
     <Compile Include="Pokemon\Pokemon\PokemonList.cs" />
     <Compile Include="Pokemon\Stat\StatList.cs" />
     <Compile Include="Pokemon\Type\TypeList.cs" />
+    <Compile Include="Utility\CommonModels\APIResource\APIResource.cs" />
+    <Compile Include="Utility\CommonModels\APIResource\APIResourceModel.cs" />
     <Compile Include="Utility\CommonModels\NamedAPIResource\NamedAPIResource.cs" />
     <Compile Include="Utility\CommonModels\NamedAPIResource\NamedAPIResourceList.cs" />
     <Compile Include="Utility\CommonModels\NamedAPIResource\NamedAPIResourceParser.cs" />

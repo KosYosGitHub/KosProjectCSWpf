@@ -206,6 +206,13 @@ namespace PokeAPI
 		public NamedAPIResource EvolvesFromSpecies => Model.EvolvesFromSpecies;
 		#endregion
 
+		#region 進化ルート
+		/// <summary>
+		/// 進化ルート
+		/// </summary>
+		public APIResource EvolutionChain => Model.EvolutionChain;
+		#endregion
+
 		#region 生息地
 		/// <summary>
 		/// 生息地
@@ -218,6 +225,20 @@ namespace PokeAPI
 		/// 世代
 		/// </summary>
 		public NamedAPIResource Generation => Model.Generation;
+		#endregion
+
+		#region 名称リスト
+		/// <summary>
+		/// 名称リスト
+		/// </summary>
+		public List<Name> Names => Model.Names;
+		#endregion
+
+		#region パルパークエンカウントエリアリスト
+		/// <summary>
+		/// パルパークエンカウントエリアリスト
+		/// </summary>
+		public List<PalParkEncounterArea> PalParkEncounters => Model.PalParkEncounters;
 		#endregion
 	}
 }

@@ -138,6 +138,13 @@ namespace PokeAPI
 		internal NamedAPIResource EvolvesFromSpecies { get; } = new NamedAPIResource();
 		#endregion
 
+		#region 進化ルート
+		/// <summary>
+		/// 進化ルート
+		/// </summary>
+		internal APIResource EvolutionChain { get; set; } = new APIResource();
+		#endregion
+
 		#region 生息地
 		/// <summary>
 		/// 生息地
@@ -150,6 +157,20 @@ namespace PokeAPI
 		/// 世代
 		/// </summary>
 		internal NamedAPIResource Generation { get; } = new NamedAPIResource();
+		#endregion
+
+		#region 名称リスト
+		/// <summary>
+		/// 名称リスト
+		/// </summary>
+		internal List<Name> Names { get; } = new List<Name>();
+		#endregion
+
+		#region パルパークエンカウントエリアリスト
+		/// <summary>
+		/// パルパークエンカウントエリアリスト
+		/// </summary>
+		internal List<PalParkEncounterArea> PalParkEncounters { get; } = new List<PalParkEncounterArea>();
 		#endregion
 	}
 }
