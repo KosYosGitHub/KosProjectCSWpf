@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Data;
 using KosGeneric;
 using KosMVVM;
 
@@ -175,14 +176,14 @@ namespace PokeAPI
 		/// <summary>
 		/// ポケモン図鑑番号リスト
 		/// </summary>
-		public List<PokemonSpeciesDexEntry> PokedexNumbers => Model.PokedexNumbers;
+		public ListCollectionView PokedexNumbers { get; }
 		#endregion
 
 		#region 卵グループリスト
 		/// <summary>
 		/// 卵グループリスト
 		/// </summary>
-		public List<NamedAPIResource> EggGroups => Model.EggGroups;
+		public ListCollectionView EggGroups { get; }
 		#endregion
 
 		#region 色
@@ -269,6 +270,19 @@ namespace PokeAPI
 		public List<PokemonSpeciesVariety> Varieties => Model.Varieties;
 		#endregion
 
+		// イベントハンドラ
+
+		#region コンストラクタ
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
+		public PokemonSpecies()
+		{
+			PokedexNumbers = new ListCollectionView(Model.PokedexNumbers);
+			EggGroups = new ListCollectionView(Model.EggGroups);
+		}
+		#endregion
+
 		// public メソッド
 
 		#region ポケモン種族の取得
@@ -300,6 +314,7 @@ namespace PokeAPI
 			RaisePropertyChanged(nameof(HatchCounter));
 			RaisePropertyChanged(nameof(HasGenderDifferences));
 			RaisePropertyChanged(nameof(GrowthRate));
+			RaisePropertyChanged(nameof(EggGroups));
 		}
 		#endregion
 	}

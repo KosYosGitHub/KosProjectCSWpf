@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,7 +39,7 @@ namespace PokeAPI
 		/// </summary>
 		/// <param name="token">PokemonSpeciesDexEntryのトークン</param>
 		/// <param name="dexEntries">取得先PokemonSpeciesDexEntryリスト</param>
-		internal void ParsePokemonSpeciesDexEntryList(JToken token, List<PokemonSpeciesDexEntry> dexEntries)
+		internal void ParsePokemonSpeciesDexEntryList(JToken token, ObservableCollection<PokemonSpeciesDexEntry> dexEntries)
 		{
 			JArray datas = token as JArray;
 			NamedAPIResourceParser parser = new NamedAPIResourceParser();

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using KosGeneric;
+using System.Collections.ObjectModel;
 
 namespace PokeAPI
 {
@@ -39,9 +40,10 @@ namespace PokeAPI
 
 			// 要素の解析
 			foreach(JObject result in results) {
-				NamedAPIResource res = new NamedAPIResource();
-				res.Name = (result["name"] as JValue).ToString();
-				res.URL = (result["url"] as JValue).ToString();
+				NamedAPIResource res = new NamedAPIResource {
+					Name = (result["name"] as JValue).ToString(),
+					URL = (result["url"] as JValue).ToString()
+				};
 				list.NamedAPIResources.Add(res);
 			}
 
@@ -49,6 +51,26 @@ namespace PokeAPI
 			if(!string.IsNullOrEmpty(next)) {
 				string nextJson = Singleton<PokeAPIClient>.Instance.GetJson(next);
 				ParseNamedAPIResourceList(nextJson, list, false);
+			}
+		}
+		#endregion
+
+		#region 名前付きAPIリソースリストの取得
+		/// <summary>
+		/// 名前付きAPIリソースリストの取得
+		/// </summary>
+		/// <param name="token">JSONトークン</param>
+		/// <param name="list">取得先の名前付きAPIリソースリスト</param>
+		internal void ParseNamedAPIResourceList(JToken token, ObservableCollection<NamedAPIResource> list)
+		{
+			JArray datas = token as JArray;
+
+			foreach(JObject data in datas) {
+				NamedAPIResource res = new NamedAPIResource() {
+					Name = (data["name"] as JValue).ToString(),
+					URL = (data["url"] as JValue).ToString()
+				};
+				list.Add(res);
 			}
 		}
 		#endregion

@@ -44,6 +44,10 @@
 					<RowDefinition Height="10"/>
 					<RowDefinition Height="32"/>
 					<RowDefinition Height="10"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="10"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="10"/>
 				</Grid.RowDefinitions>
 
 				<Grid Grid.Row="0">
@@ -146,6 +150,57 @@
 					<StackPanel Grid.Column="1" Orientation="Horizontal">
 						<Label Content="{Binding GrowthRate.Name}" BorderBrush="Black" BorderThickness="1"/>
 						<Button Content="詳細" Click="GrowthRateDetail_Click"/>
+					</StackPanel>
+				</Grid>
+
+				<Grid Grid.Row="20">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="125"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Column="0" Text="pokedex_numbers"/>
+					
+					<StackPanel Grid.Column="1" Orientation="Horizontal">
+						<DataGrid
+							x:Name="pokedexNumbersGrid"
+							ItemsSource="{Binding PokedexNumbers}"
+							HeadersVisibility="Column"
+							ColumnHeaderHeight="24"
+							SelectionMode="Single"
+							AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="pokedex" Binding="{Binding Pokedex.Name}"/>
+								<DataGridTextColumn Header="entry_number" Binding="{Binding EntryNumber}"/>
+							</DataGrid.Columns>
+						</DataGrid>
+						
+						<Button Content="詳細" VerticalAlignment="Bottom" Height="32"/>
+					</StackPanel>
+				</Grid>
+
+				<Grid Grid.Row="22">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="125"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Column="0" Text="egg_groups"/>
+
+					<StackPanel Grid.Column="1" Orientation="Horizontal">
+						<DataGrid
+							x:Name="eggGroupsGrid"
+							ItemsSource="{Binding EggGroups}"
+							HeadersVisibility="Column"
+							ColumnHeaderHeight="24"
+							SelectionMode="Single"
+							AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="name" Binding="{Binding Name}"/>
+							</DataGrid.Columns>
+						</DataGrid>
+
+						<Button Content="詳細" VerticalAlignment="Bottom" Height="32"/>
 					</StackPanel>
 				</Grid>
 			</Grid>

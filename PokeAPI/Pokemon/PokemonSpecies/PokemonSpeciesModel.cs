@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Newtonsoft.Json.Linq;
 
 namespace PokeAPI
@@ -104,14 +105,14 @@ namespace PokeAPI
 		/// <summary>
 		/// ポケモン図鑑番号リスト
 		/// </summary>
-		internal List<PokemonSpeciesDexEntry> PokedexNumbers { get; } = new List<PokemonSpeciesDexEntry>();
+		internal ObservableCollection<PokemonSpeciesDexEntry> PokedexNumbers { get; } = new ObservableCollection<PokemonSpeciesDexEntry>();
 		#endregion
 
 		#region 卵グループリスト
 		/// <summary>
 		/// 卵グループリスト
 		/// </summary>
-		internal List<NamedAPIResource> EggGroups { get; } = new List<NamedAPIResource>();
+		internal ObservableCollection<NamedAPIResource> EggGroups { get; } = new ObservableCollection<NamedAPIResource>();
 		#endregion
 
 		#region 色
@@ -215,6 +216,7 @@ namespace PokeAPI
 		internal void GetPokemonSpeciesJson(string json)
 		{
 			JObject obj = JObject.Parse(json);
+			PokemonSpeciesParser pokemonSpeciesParser = new PokemonSpeciesParser();
 			NamedAPIResourceParser namedAPIResourceParser = new NamedAPIResourceParser();
 
 			ID = (int)obj["id"];
@@ -227,6 +229,8 @@ namespace PokeAPI
 			HatchCounter = (int)obj["hatch_counter"];
 			HasGenderDifferences = (bool)obj["has_gender_differences"];
 			namedAPIResourceParser.ParseNamedAPIResource(obj["growth_rate"], GrowthRate.Model);
+			pokemonSpeciesParser.ParsePokemonSpeciesDexEntryList(obj["pokedex_numbers"], PokedexNumbers);
+			namedAPIResourceParser.ParseNamedAPIResourceList(obj["egg_groups"], EggGroups);
 		}
 		#endregion
 	}
