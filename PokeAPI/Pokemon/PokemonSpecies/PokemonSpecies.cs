@@ -100,9 +100,9 @@ namespace PokeAPI
 		/// </summary>
 		public int BaseHappiness
 		{
-			get => Model.BaseHapiness;
+			get => Model.BaseHappiness;
 			set {
-				Model.BaseHapiness = value;
+				Model.BaseHappiness = value;
 				RaisePropertyChanged();
 			}
 		}
@@ -267,6 +267,40 @@ namespace PokeAPI
 		/// バリエーションリスト
 		/// </summary>
 		public List<PokemonSpeciesVariety> Varieties => Model.Varieties;
+		#endregion
+
+		// public メソッド
+
+		#region ポケモン種族の取得
+		/// <summary>
+		/// ポケモン種族の取得
+		/// </summary>
+		/// <param name="url">URL</param>
+		public void GetPokemonSpecies(string url)
+		{
+			// 取得済
+			if(Model.IsGeted) {
+				return;
+			}
+
+			// JSON文字列の取得
+			string json = Singleton<PokeAPIClient>.Instance.GetJson(url);
+
+			// 解析
+			Model.GetPokemonSpeciesJson(json);
+			Model.IsGeted = true;
+
+			RaisePropertyChanged(nameof(ID));
+			RaisePropertyChanged(nameof(Name));
+			RaisePropertyChanged(nameof(Order));
+			RaisePropertyChanged(nameof(GenderRate));
+			RaisePropertyChanged(nameof(CaptureRate));
+			RaisePropertyChanged(nameof(BaseHappiness));
+			RaisePropertyChanged(nameof(IsBaby));
+			RaisePropertyChanged(nameof(HatchCounter));
+			RaisePropertyChanged(nameof(HasGenderDifferences));
+			RaisePropertyChanged(nameof(GrowthRate));
+		}
 		#endregion
 	}
 }

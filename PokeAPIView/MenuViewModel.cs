@@ -376,7 +376,7 @@ namespace PokeAPIView
 			PokemonFormClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ポケモンフォルム(PokemoForm)", new PokemonFormList(), typeof(Window)));
 			PokemonHabitatClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ポケモン生息地(PokemonHabitat)", new PokemonHabitatList(), typeof(Window)));
 			PokemonShapeClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ポケモンの形(PokemonShape)", new PokemonShapeList(), typeof(Window)));
-			PokemonSpeciesClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ポケモン種族(PokemonSpecies)", new PokemonSpeciesList(), typeof(Window)));
+			PokemonSpeciesClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ポケモン種族(PokemonSpecies)", new PokemonSpeciesList(), typeof(PokemonSpeciesWindow)));
 			StatClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("ステータス(Stat)", new StatList(), typeof(Window)));
 			TypeClick = new RelayCommand(() => ShowNamedAPIResourceListWindow("タイプ(Type)", new TypeList(), typeof(Window)));
 

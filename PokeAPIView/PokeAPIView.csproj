@@ -96,12 +96,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PokemonSpeciesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MenuViewModel.cs" />
     <Compile Include="NamedAPIResourceListViewModel.cs" />
     <Compile Include="NamedAPIResourceListWindow.xaml.cs">
       <DependentUpon>NamedAPIResourceListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PokemonSpeciesWindow.xaml.cs">
+      <DependentUpon>PokemonSpeciesWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

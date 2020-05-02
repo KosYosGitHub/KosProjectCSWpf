@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 
 namespace PokeAPI
 {
@@ -57,7 +58,7 @@ namespace PokeAPI
 		/// <summary>
 		/// 基本なつき度
 		/// </summary>
-		internal int BaseHapiness { get; set; } = 0;
+		internal int BaseHappiness { get; set; } = 0;
 		#endregion
 
 		#region 赤ちゃんポケモン
@@ -195,6 +196,38 @@ namespace PokeAPI
 		/// バリエーションリスト
 		/// </summary>
 		internal List<PokemonSpeciesVariety> Varieties { get; } = new List<PokemonSpeciesVariety>();
+		#endregion
+
+		#region 取得済フラグ
+		/// <summary>
+		/// 取得済フラグ
+		/// </summary>
+		internal bool IsGeted { get; set; } = false;
+		#endregion
+
+		// internal メソッド
+
+		#region JSON文字列の解析
+		/// <summary>
+		/// JSON文字列の解析
+		/// </summary>
+		/// <param name="json">JSON文字列</param>
+		internal void GetPokemonSpeciesJson(string json)
+		{
+			JObject obj = JObject.Parse(json);
+			NamedAPIResourceParser namedAPIResourceParser = new NamedAPIResourceParser();
+
+			ID = (int)obj["id"];
+			Name = (obj["name"] as JValue).ToString();
+			Order = (int)obj["order"];
+			GenderRate = (int)obj["gender_rate"];
+			CaptureRate = (int)obj["capture_rate"];
+			BaseHappiness = (int)obj["base_happiness"];
+			IsBaby = (bool)obj["is_baby"];
+			HatchCounter = (int)obj["hatch_counter"];
+			HasGenderDifferences = (bool)obj["has_gender_differences"];
+			namedAPIResourceParser.ParseNamedAPIResource(obj["growth_rate"], GrowthRate.Model);
+		}
 		#endregion
 	}
 }
