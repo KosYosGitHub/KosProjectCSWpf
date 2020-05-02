@@ -218,6 +218,7 @@ namespace PokeAPI
 			JObject obj = JObject.Parse(json);
 			PokemonSpeciesParser pokemonSpeciesParser = new PokemonSpeciesParser();
 			NamedAPIResourceParser namedAPIResourceParser = new NamedAPIResourceParser();
+			APIResourceParser apiResourceParser = new APIResourceParser();
 
 			ID = (int)obj["id"];
 			Name = (obj["name"] as JValue).ToString();
@@ -231,6 +232,12 @@ namespace PokeAPI
 			namedAPIResourceParser.ParseNamedAPIResource(obj["growth_rate"], GrowthRate.Model);
 			pokemonSpeciesParser.ParsePokemonSpeciesDexEntryList(obj["pokedex_numbers"], PokedexNumbers);
 			namedAPIResourceParser.ParseNamedAPIResourceList(obj["egg_groups"], EggGroups);
+			namedAPIResourceParser.ParseNamedAPIResource(obj["color"], Color.Model);
+			namedAPIResourceParser.ParseNamedAPIResource(obj["shape"], Shape.Model);
+			namedAPIResourceParser.ParseNamedAPIResource(obj["evolves_from_species"], EvolvesFromSpecies.Model);
+			apiResourceParser.ParseAPIResource(obj["evolution_chain"], EvolutionChain.Model);
+			namedAPIResourceParser.ParseNamedAPIResource(obj["habitat"], Habitat.Model);
+			namedAPIResourceParser.ParseNamedAPIResource(obj["generation"], Generation.Model);
 		}
 		#endregion
 	}

@@ -314,7 +314,13 @@ namespace PokeAPI
 			RaisePropertyChanged(nameof(HatchCounter));
 			RaisePropertyChanged(nameof(HasGenderDifferences));
 			RaisePropertyChanged(nameof(GrowthRate));
+			RaisePropertyChanged(nameof(PokedexNumbers));
 			RaisePropertyChanged(nameof(EggGroups));
+			RaisePropertyChanged(nameof(Color));
+			RaisePropertyChanged(nameof(Shape));
+			RaisePropertyChanged(nameof(EvolvesFromSpecies));
+			RaisePropertyChanged(nameof(Habitat));
+			RaisePropertyChanged(nameof(Generation));
 		}
 		#endregion
 	}

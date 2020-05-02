@@ -116,6 +116,7 @@
     <Compile Include="Pokemon\Type\TypeList.cs" />
     <Compile Include="Utility\CommonModels\APIResource\APIResource.cs" />
     <Compile Include="Utility\CommonModels\APIResource\APIResourceModel.cs" />
+    <Compile Include="Utility\CommonModels\APIResource\APIResourceParser.cs" />
     <Compile Include="Utility\CommonModels\Description\Description.cs" />
     <Compile Include="Utility\CommonModels\Description\DescriptionModel.cs" />
     <Compile Include="Utility\CommonModels\FlavorText\FlavorText.cs" />

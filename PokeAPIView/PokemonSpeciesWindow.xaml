@@ -48,6 +48,18 @@
 					<RowDefinition Height="10"/>
 					<RowDefinition Height="Auto"/>
 					<RowDefinition Height="10"/>
+					<RowDefinition Height="32"/>
+					<RowDefinition Height="10"/>
+					<RowDefinition Height="32"/>
+					<RowDefinition Height="10"/>
+					<RowDefinition Height="32"/>
+					<RowDefinition Height="10"/>
+					<RowDefinition Height="32"/>
+					<RowDefinition Height="10"/>
+					<RowDefinition Height="32"/>
+					<RowDefinition Height="10"/>
+					<RowDefinition Height="32"/>
+					<RowDefinition Height="10"/>
 				</Grid.RowDefinitions>
 
 				<Grid Grid.Row="0">
@@ -159,7 +171,7 @@
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
 
-					<TextBlock Grid.Column="0" Text="pokedex_numbers"/>
+					<TextBlock Grid.Column="0" Text="pokedex_numbers" HorizontalAlignment="Right"/>
 					
 					<StackPanel Grid.Column="1" Orientation="Horizontal">
 						<DataGrid
@@ -185,7 +197,7 @@
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
 
-					<TextBlock Grid.Column="0" Text="egg_groups"/>
+					<TextBlock Grid.Column="0" Text="egg_groups" HorizontalAlignment="Right"/>
 
 					<StackPanel Grid.Column="1" Orientation="Horizontal">
 						<DataGrid
@@ -201,6 +213,81 @@
 						</DataGrid>
 
 						<Button Content="詳細" VerticalAlignment="Bottom" Height="32"/>
+					</StackPanel>
+				</Grid>
+
+				<Grid Grid.Row="24">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="125"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Column="0" Text="color" HorizontalAlignment="Right"/>
+					<StackPanel Grid.Column="1" Orientation="Horizontal">
+						<Label Content="{Binding Color.Name}" BorderBrush="Black" BorderThickness="1"/>
+						<Button Content="詳細"/>
+					</StackPanel>
+				</Grid>
+
+				<Grid Grid.Row="26">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="125"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Column="0" Text="shape" HorizontalAlignment="Right"/>
+					<StackPanel Grid.Column="1" Orientation="Horizontal">
+						<Label Content="{Binding Shape.Name}" BorderBrush="Black" BorderThickness="1"/>
+						<Button Content="詳細"/>
+					</StackPanel>
+				</Grid>
+
+				<Grid Grid.Row="28">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="125"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Column="0" Text="evolves_from_species" HorizontalAlignment="Right"/>
+					<StackPanel Grid.Column="1" Orientation="Horizontal">
+						<Label Content="{Binding EvolvesFromSpecies.Name}" BorderBrush="Black" BorderThickness="1"/>
+						<Button Content="詳細"/>
+					</StackPanel>
+				</Grid>
+
+				<Grid Grid.Row="30">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="125"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Column="0" Text="evolution_chain" HorizontalAlignment="Right"/>
+					<Button Grid.Column="1" Content="詳細" HorizontalAlignment="Left"/>
+				</Grid>
+
+				<Grid Grid.Row="32">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="125"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Column="0" Text="habitat" HorizontalAlignment="Right"/>
+					<StackPanel Grid.Column="1" Orientation="Horizontal">
+						<Label Content="{Binding Habitat.Name}" BorderBrush="Black" BorderThickness="1"/>
+						<Button Content="詳細"/>
+					</StackPanel>
+				</Grid>
+
+				<Grid Grid.Row="34">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="125"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Column="0" Text="generation" HorizontalAlignment="Right"/>
+					<StackPanel Grid.Column="1" Orientation="Horizontal">
+						<Label Content="{Binding Generation	.Name}" BorderBrush="Black" BorderThickness="1"/>
+						<Button Content="詳細"/>
 					</StackPanel>
 				</Grid>
 			</Grid>
