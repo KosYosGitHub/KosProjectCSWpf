@@ -12,16 +12,16 @@ namespace PokeAPI
 	/// </summary>
 	public class NamedAPIResource : KosViewModel
 	{
-		// メンバ変数
+		// internal プロパティ
 
 		#region 名前付きAPIリソース
 		/// <summary>
 		/// 名前付きAPIリソース
 		/// </summary>
-		private NamedAPIResourceModel model = new NamedAPIResourceModel();
+		internal NamedAPIResourceModel Model { get; } = new NamedAPIResourceModel();
 		#endregion
 
-		// プロパティ
+		// public プロパティ
 
 		#region 名称
 		/// <summary>
@@ -29,9 +29,9 @@ namespace PokeAPI
 		/// </summary>
 		public string Name
 		{
-			get => model?.Name;
+			get => Model?.Name;
 			set {
-				model.Name = value;
+				Model.Name = value;
 				RaisePropertyChanged();
 			}
 		}
@@ -43,9 +43,9 @@ namespace PokeAPI
 		/// </summary>
 		public string URL
 		{
-			get => model?.URL;
+			get => Model?.URL;
 			set {
-				model.URL = value;
+				Model.URL = value;
 				RaisePropertyChanged();
 			}
 		}

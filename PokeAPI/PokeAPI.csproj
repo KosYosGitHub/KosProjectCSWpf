@@ -99,7 +99,13 @@
     <Compile Include="Pokemon\PokemonForm\PokemonFormList.cs" />
     <Compile Include="Pokemon\PokemonHabitat\PokemonHabitatList.cs" />
     <Compile Include="Pokemon\PokemonShape\PokemonShapeList.cs" />
+    <Compile Include="Pokemon\PokemonSpecies\GenusModel.cs" />
+    <Compile Include="Pokemon\PokemonSpecies\PokemonSpecies.cs" />
+    <Compile Include="Pokemon\PokemonSpecies\PokemonSpeciesDexEntry.cs" />
+    <Compile Include="Pokemon\PokemonSpecies\PokemonSpeciesDexEntryModel.cs" />
     <Compile Include="Pokemon\PokemonSpecies\PokemonSpeciesList.cs" />
+    <Compile Include="Pokemon\PokemonSpecies\PokemonSpeciesModel.cs" />
+    <Compile Include="Pokemon\PokemonSpecies\PokemonSpeciesParser.cs" />
     <Compile Include="Pokemon\Pokemon\PokemonList.cs" />
     <Compile Include="Pokemon\Stat\StatList.cs" />
     <Compile Include="Pokemon\Type\TypeList.cs" />
