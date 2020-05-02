@@ -112,6 +112,8 @@
     <Compile Include="Pokemon\PokemonSpecies\PokemonSpeciesVarietyViewModel.cs" />
     <Compile Include="Pokemon\PokemonSpecies\PokemonSpeciesVarietyModel.cs" />
     <Compile Include="Pokemon\Pokemon\PokemonList.cs" />
+    <Compile Include="Pokemon\Pokemon\PokemonModel.cs" />
+    <Compile Include="Pokemon\Pokemon\PokemonViewModel.cs" />
     <Compile Include="Pokemon\Stat\StatList.cs" />
     <Compile Include="Pokemon\Type\TypeList.cs" />
     <Compile Include="Utility\CommonModels\APIResource\APIResourceViewModel.cs" />
