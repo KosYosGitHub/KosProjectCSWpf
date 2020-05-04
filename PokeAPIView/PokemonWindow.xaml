@@ -92,6 +92,85 @@
 					<TextBlock Grid.Column="0" Text="weight(hectograms)" HorizontalAlignment="Right"/>
 					<Label Grid.Column="1" Content="{Binding Weight}" BorderBrush="Black" BorderThickness="1"/>
 				</Grid>
+
+				<Grid Margin="0,10,0,0">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Column="0" Text="abilities" HorizontalAlignment="Right"/>
+
+					<StackPanel Grid.Column="1" Orientation="Horizontal">
+						<DataGrid
+							x:Name="abilitiesGrid"
+							ItemsSource="{Binding Abilities}"
+							HeadersVisibility="Column"
+							ColumnHeaderHeight="24"
+							SelectionMode="Single"
+							AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridCheckBoxColumn Header="is_hidden" Binding="{Binding IsHidden}"/>
+								<DataGridTextColumn Header="slot" Binding="{Binding Slot}"/>
+								<DataGridTextColumn Header="ability" Binding="{Binding Ability.Name}"/>
+							</DataGrid.Columns>
+						</DataGrid>
+
+						<Button Content="詳細" VerticalAlignment="Bottom" Height="32"/>
+					</StackPanel>
+				</Grid>
+
+				<Grid Margin="0,10,0,0">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Column="0" Text="forms" HorizontalAlignment="Right"/>
+
+					<StackPanel Grid.Column="1" Orientation="Horizontal">
+						<DataGrid
+							x:Name="formsGrid"
+							ItemsSource="{Binding Forms}"
+							HeadersVisibility="Column"
+							ColumnHeaderHeight="24"
+							SelectionMode="Single"
+							AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="forms" Binding="{Binding Forms.Name}"/>
+							</DataGrid.Columns>
+						</DataGrid>
+
+						<Button Content="詳細" VerticalAlignment="Bottom" Height="32"/>
+					</StackPanel>
+				</Grid>
+
+				<Grid Margin="0,10,0,0">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="{Binding Width, ElementName=leftColumn}"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Column="0" Text="game_indices" HorizontalAlignment="Right"/>
+
+					<StackPanel Grid.Column="1" Orientation="Horizontal">
+						<DataGrid
+							x:Name="gameIndicesGrid"
+							ItemsSource="{Binding GameIndices}"
+							HeadersVisibility="Column"
+							MaxHeight="500"
+							ColumnHeaderHeight="24"
+							SelectionMode="Single"
+							AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="game_index" Binding="{Binding GameIndex}"/>
+								<DataGridTextColumn Header="version" Binding="{Binding Version.Name}"/>
+							</DataGrid.Columns>
+						</DataGrid>
+
+						<Button Content="詳細" VerticalAlignment="Bottom" Height="32"/>
+					</StackPanel>
+				</Grid>
 			</StackPanel>
 		</ScrollViewer>
 

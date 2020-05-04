@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Data;
 using KosGeneric;
 using KosMVVM;
 
@@ -108,6 +109,10 @@ namespace PokeAPI
 		}
 		#endregion
 
+		#region 重さ
+		/// <summary>
+		/// 重さ
+		/// </summary>
 		public int Weight
 		{
 			get => Model.Weight;
@@ -116,6 +121,21 @@ namespace PokeAPI
 				RaisePropertyChanged();
 			}
 		}
+		#endregion
+
+		#region 特性リスト
+		/// <summary>
+		/// 特性リスト
+		/// </summary>
+		public ListCollectionView Abilities { get; }
+		#endregion
+
+		#region 関連するゲームインデックスリスト
+		/// <summary>
+		/// 関連するゲームインデックスリスト
+		/// </summary>
+		public ListCollectionView GameIndices { get; }
+		#endregion
 
 		// イベントハンドラ
 
@@ -125,6 +145,8 @@ namespace PokeAPI
 		/// </summary>
 		public PokemonViewModel()
 		{
+			Abilities = new ListCollectionView(Model.Abilities);
+			GameIndices = new ListCollectionView(Model.GameIndices);
 		}
 		#endregion
 
@@ -156,6 +178,8 @@ namespace PokeAPI
 			RaisePropertyChanged(nameof(IsDefault));
 			RaisePropertyChanged(nameof(Order));
 			RaisePropertyChanged(nameof(Weight));
+			RaisePropertyChanged(nameof(Abilities));
+			RaisePropertyChanged(nameof(GameIndices));
 		}
 		#endregion
 	}

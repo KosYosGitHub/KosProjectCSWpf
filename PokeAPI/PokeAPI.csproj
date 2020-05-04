@@ -111,8 +111,11 @@
     <Compile Include="Pokemon\PokemonSpecies\PokemonSpeciesParser.cs" />
     <Compile Include="Pokemon\PokemonSpecies\PokemonSpeciesVarietyViewModel.cs" />
     <Compile Include="Pokemon\PokemonSpecies\PokemonSpeciesVarietyModel.cs" />
+    <Compile Include="Pokemon\Pokemon\PokemonAbilityModel.cs" />
+    <Compile Include="Pokemon\Pokemon\PokemonAbilityViewModel.cs" />
     <Compile Include="Pokemon\Pokemon\PokemonList.cs" />
     <Compile Include="Pokemon\Pokemon\PokemonModel.cs" />
+    <Compile Include="Pokemon\Pokemon\PokemonParser.cs" />
     <Compile Include="Pokemon\Pokemon\PokemonViewModel.cs" />
     <Compile Include="Pokemon\Stat\StatList.cs" />
     <Compile Include="Pokemon\Type\TypeList.cs" />
@@ -133,6 +136,9 @@
     <Compile Include="Utility\CommonModels\Name\NameViewModel.cs" />
     <Compile Include="Utility\CommonModels\Name\NameModel.cs" />
     <Compile Include="Utility\CommonModels\Name\NameParser.cs" />
+    <Compile Include="Utility\CommonModels\VersionGameIndex\VersionGameIndexModel.cs" />
+    <Compile Include="Utility\CommonModels\VersionGameIndex\VersionGameIndexParser.cs" />
+    <Compile Include="Utility\CommonModels\VersionGameIndex\VersionGameIndexViewModel.cs" />
     <Compile Include="Utility\Language\LanguageList.cs" />
     <Compile Include="Utility\Language\LanguageViewModel.cs" />
     <Compile Include="Utility\Language\LanguageModel.cs" />
