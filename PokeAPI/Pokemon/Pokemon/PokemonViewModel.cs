@@ -137,6 +137,13 @@ namespace PokeAPI
 		public ListCollectionView GameIndices { get; }
 		#endregion
 
+		#region スプライトURL
+		/// <summary>
+		/// スプライトURL
+		/// </summary>
+		public List<string> Sprites => Model.Sprites;
+		#endregion
+
 		// イベントハンドラ
 
 		#region コンストラクタ

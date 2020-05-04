@@ -51,6 +51,10 @@ namespace PokeAPIView
 		private void Window_Loaded(object sender, RoutedEventArgs e)
 		{
 			viewModel.GetPokemon(Url);
+
+			foreach(string spriteUrl in viewModel.Sprites) {
+				_ = spritesStackPanel.Children.Add(new Image() { Source = new BitmapImage(new Uri(spriteUrl)) });
+			}
 		}
 		#endregion
 

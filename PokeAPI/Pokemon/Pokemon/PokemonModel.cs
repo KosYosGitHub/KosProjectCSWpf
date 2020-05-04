@@ -85,6 +85,13 @@ namespace PokeAPI
 		internal ObservableCollection<VersionGameIndexViewModel> GameIndices { get; } = new ObservableCollection<VersionGameIndexViewModel>();
 		#endregion
 
+		#region スプライトURLリスト
+		/// <summary>
+		/// スプライトURLリスト
+		/// </summary>
+		internal List<string> Sprites { get; } = new List<string>();
+		#endregion
+
 		#region 取得済
 		/// <summary>
 		/// 取得済
@@ -116,6 +123,34 @@ namespace PokeAPI
 			pokemonParser.ParsePokemonAbilityList(obj["abilities"], Abilities);
 			namedAPIResourceParser.ParseNamedAPIResourceList(obj["forms"], Forms);
 			versionGameIndexParser.ParseVersionGameIndexList(obj["game_indices"], GameIndices);
+
+			JToken sprites = obj["sprites"];
+			ParseSpriteSub(sprites, "front_default");
+			ParseSpriteSub(sprites, "front_shiny");
+			ParseSpriteSub(sprites, "front_female");
+			ParseSpriteSub(sprites, "front_shiny_female");
+			ParseSpriteSub(sprites, "back_default");
+			ParseSpriteSub(sprites, "back_shiny");
+			ParseSpriteSub(sprites, "back_female");
+			ParseSpriteSub(sprites, "back_shiny_female");
+		}
+		#endregion
+
+		// private メソッド
+
+		#region spritesの解析
+		/// <summary>
+		/// spritesの解析
+		/// </summary>
+		/// <param name="token">トークン</param>
+		/// <param name="field">フィールド</param>
+		private void ParseSpriteSub(JToken token, string field)
+		{
+			JValue url = token[field] as JValue;
+
+			if(url != null && !string.IsNullOrWhiteSpace(url.ToString())) {
+				Sprites.Add(url.ToString());
+			}
 		}
 		#endregion
 	}
