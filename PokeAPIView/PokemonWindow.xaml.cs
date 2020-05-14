@@ -50,8 +50,10 @@ namespace PokeAPIView
 		/// <param name="e"></param>
 		private void Window_Loaded(object sender, RoutedEventArgs e)
 		{
+			// ポケモン情報の取得
 			viewModel.GetPokemon(Url);
 
+			// スプライトURLから画像の読込
 			foreach(string spriteUrl in viewModel.Sprites) {
 				_ = spritesStackPanel.Children.Add(new Image() { Source = new BitmapImage(new Uri(spriteUrl)) });
 			}
