@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
+using KosGeneric;
 
 namespace TestApp
 {
@@ -23,6 +25,17 @@ namespace TestApp
 		public MainWindow()
 		{
 			InitializeComponent();
+		}
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			OpenFileDialog ofd = new OpenFileDialog();
+
+			ofd.Filter = "全ファイル|*.*";
+
+			if(ofd.ShowDialog(this).IsTrue()) {
+				viewModel.ReadFile(ofd.FileName);
+			}
 		}
 	}
 }

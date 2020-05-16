@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KosSQLServer", "KosSQLServer\KosSQLServer.csproj", "{318717B4-CD50-4522-9ACD-2D36685E97A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KosID3Tag", "KosID3Tag\KosID3Tag.csproj", "{8D79BBD5-0790-454D-A44D-24DE5282BACF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{318717B4-CD50-4522-9ACD-2D36685E97A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{318717B4-CD50-4522-9ACD-2D36685E97A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{318717B4-CD50-4522-9ACD-2D36685E97A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D79BBD5-0790-454D-A44D-24DE5282BACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D79BBD5-0790-454D-A44D-24DE5282BACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D79BBD5-0790-454D-A44D-24DE5282BACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D79BBD5-0790-454D-A44D-24DE5282BACF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

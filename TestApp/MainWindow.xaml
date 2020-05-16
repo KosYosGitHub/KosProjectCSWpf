@@ -4,113 +4,57 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestApp"
-		xmlns:ke="clr-namespace:KosEnvironment;assembly=KosEnvironment"
+		xmlns:id3="clr-namespace:KosID3Tag;assembly=KosID3Tag"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
 		WindowStartupLocation="CenterScreen">
 	<Window.DataContext>
-		<ke:EnvironmentInfo/>
+		<id3:ID3TagV1ViewModel x:Name="viewModel"/>
 	</Window.DataContext>
 	<Grid>
-		<ScrollViewer VerticalScrollBarVisibility="Visible">
-			<StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="Operating System Name"/>
-					<Label Content="{Binding OperatingSystemName}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="Operating System Caption"/>
-					<Label Content="{Binding OperatingSystemCaption}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="Operating System Description"/>
-					<Label Content="{Binding OperatingSystemDescription}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="Operating System Version"/>
-					<Label Content="{Binding OperatingSystemVersion}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="Operating System Build Number"/>
-					<Label Content="{Binding OperatingSystemBuildNumber}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="Operating System Build Type"/>
-					<Label Content="{Binding OperatingSystemBuildType}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="CSDVersion"/>
-					<Label Content="{Binding CSDVersion}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="Operating System Manufacturer"/>
-					<Label Content="{Binding OperatingSystemManufacturer}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="Operating System Locale ID"/>
-					<Label Content="{Binding OperatingSystemLocaleID}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="Operating System Language"/>
-					<Label Content="{Binding OperatingSystemLanguage}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="Operating System Code Set"/>
-					<Label Content="{Binding OperatingSystemCodeSet}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="Operating System Country Code"/>
-					<Label Content="{Binding OperatingSystemCountryCode}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="Operating System Serial Number"/>
-					<Label Content="{Binding OperatingSystemSerialNumber}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="Operating System Install Date"/>
-					<Label Content="{Binding OperatingSystemInstallDate}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="Last Boot Up Time"/>
-					<Label Content="{Binding LastBootUpTime}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="Windows Directory"/>
-					<Label Content="{Binding WindowsDirectory}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="System Device"/>
-					<Label Content="{Binding SystemDevice}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="System Drive"/>
-					<Label Content="{Binding SystemDrive}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="Boot Device"/>
-					<Label Content="{Binding BootDevice}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="Windows Plus! Product ID"/>
-					<Label Content="{Binding PlusProductID}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="Windows Plus! Version Number"/>
-					<Label Content="{Binding PlusVersionNumber}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="Creation Class Name"/>
-					<Label Content="{Binding CreationClassName}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="CSCreation Class Name"/>
-					<Label Content="{Binding CSCreationClassName}"/>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal">
-					<Label Content="CSName"/>
-					<Label Content="{Binding CSName}"/>
-				</StackPanel>
+		<StackPanel>
+			<Button Content="読込" Click="Button_Click"/>
+			<Border Height="15"/>
+			<StackPanel Orientation="Horizontal">
+				<Label Content="ID3v1存在："/>
+				<Label Content="{Binding IsExists}"/>
 			</StackPanel>
-		</ScrollViewer>
+			<StackPanel Orientation="Horizontal">
+				<Label Content="バージョン："/>
+				<Label Content="{Binding Version}"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Label Content="曲名："/>
+				<Label Content="{Binding SongTitle}"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Label Content="アーティスト："/>
+				<Label Content="{Binding Artist}"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Label Content="アルバム："/>
+				<Label Content="{Binding Album}"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Label Content="西暦："/>
+				<Label Content="{Binding Year}"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Label Content="コメント："/>
+				<Label Content="{Binding Comment}"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Label Content="トラック番号："/>
+				<Label Content="{Binding TrackNo}"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Label Content="ジャンル番号："/>
+				<Label Content="{Binding GenreNo}"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Label Content="ジャンル："/>
+				<Label Content="{Binding Genre}"/>
+			</StackPanel>
+		</StackPanel>
 	</Grid>
 </Window>
